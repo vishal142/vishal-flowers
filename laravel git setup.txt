@@ -1,0 +1,11 @@
+1. env example save to .env file and setup the db name and SESSION_DRIVER = file for use session
+
+2.npm install
+
+3.coposer install
+
+4.php artisan migrate
+
+5. php artisan key:generate 
+
+6 . php artisan serve
