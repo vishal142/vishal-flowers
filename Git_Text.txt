@@ -1,0 +1,13 @@
+1. git status
+2. git add .
+3. git commit -m "messsage"
+4. git remote add github address
+5. git push -f github master
+6. user name your github email address
+7. password git hub password
+
+---------------- Add email And Your email -------
+
+git config --global user.email "you@example.com"
+
+git config --global user.name "Your Name"
