@@ -1,10 +1,11 @@
 1. git status
 2. git add .
-3. git commit -m "messsage"
-4. git remote add github address
-5. git push -f github master
-6. user name your github email address
-7. password git hub password
+3. git pull
+4. git commit -m "messsage"
+5. git remote add github address
+6. git push -f github master
+7. user name your github email address
+8. password git hub password
 
 ---------------- Add email And Your email -------
 
