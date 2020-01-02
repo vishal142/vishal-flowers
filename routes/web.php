@@ -38,3 +38,7 @@ Route::get('admin/sub-category/add-sub-category','SubCategoryController@Add_Sub_
 Route::post('admin/sub-category/add_sub_category_data','SubCategoryController@add_sub_category_data');
 Route::get('admin/sub-category/update-sub-category/{sub_category_id}','SubCategoryController@Add_Sub_Category');
 Route::post('admin/sub-category/sub_change_status','SubCategoryController@sub_change_status');
+
+Route::get('admin/item','ItemController@index');
+Route::get('admin/item/add-item','ItemController@AddItem');
+Route::get('admin/item/edit-item','ItemController@EditItem');

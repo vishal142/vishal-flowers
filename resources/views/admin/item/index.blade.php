@@ -1,11 +1,7 @@
 @extends('admin.layouts.default')
-@section('title','Category')
+@section('title','Item List')
 @section('content')
 
-<?php 
-//print_r($recordset);
-//exit;
- ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -37,7 +33,7 @@
             <div class="box-header">
               <h3 class="box-title pull-right">
               
-            <a class="btn btn-success btn-sm" href="/admin/sub-category/add-sub-category"> <i class="ace-icon fa glyphicon-plus white" title="Add User"></i> Add New </a>
+            <a class="btn btn-success btn-sm" href="/admin/item/add-item"> <i class="ace-icon fa glyphicon-plus white" title="Add User"></i> Add New </a>
              
               </h3>
             </div>
@@ -47,8 +43,13 @@
                 <thead>
                 <tr>
                   <th>SL #</th>
+                  <th>Item Image</th>
                   <th>Category Name</th>
-                  <th>Sub-Category Name</th>
+                  <th>Sub - Category Name</th>
+                  <th>Item Name</th>
+                  <th>Item Code</th>
+                  <th>Item Price</th>
+                  <th>Hike price</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -66,16 +67,22 @@
 						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
-						$editLink = '/admin/sub-category/update-sub-category/'.$row->id;
+						$editLink = '/admin/item/edit-item/'.$row->id;
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $row->cat_id;?></td>
-                  <td><?php echo ucfirst($row->sub_cat_name);?></td>
+                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $row->id;?></td>
+
+                  <td><?php echo ucfirst($row->id);?></td>
                   <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row->id;?>');" id="cng_status<?php echo $row->id;?>" class="<?php echo ($row->status=='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row->status=='Active')?'Active':'Inactive';?></a></td>
 
-                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->sub_cat_name);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
+                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->id);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
                 
                 </tr>
                 <?php
@@ -113,9 +120,9 @@ function change_status(id){
 	if(confirm("Are you sure to change status of this record?"))
 	{
 		$.ajax({
-			url : baseurl+'/admin/sub-category/sub_change_status',
+			url : baseurl+'/admin/category/change_status',
 			type : 'POST',
-			data : {'sub_category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
+			data : {'category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
 			//dataType : 'json',
 			beforeSend : function(jqXHR, settings ){
 				//alert(url);

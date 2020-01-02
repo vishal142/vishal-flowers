@@ -20,6 +20,12 @@
             <i class="fa fa-dashboard"></i> <span>Sub-Category</span>
           </a>
         </li>
+
+        <li class="treeview {{ Route::currentRouteNamed('item') ? 'active' : ''  }}">
+          <a href="/admin/item">
+            <i class="fa fa-dashboard"></i> <span>Item List</span>
+          </a>
+        </li>
     
 
     </ul>

@@ -12,5 +12,10 @@ class Helper
         return strtoupper($string);
     }
 
+    public static function GetCategoryName(int $id){
+    	
+
+    }
+
 	
 }
