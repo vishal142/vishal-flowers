@@ -115,7 +115,7 @@ function change_status(id){
 		$.ajax({
 			url : baseurl+'/admin/sub-category/sub_change_status',
 			type : 'POST',
-			data : {'category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
+			data : {'sub_category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
 			//dataType : 'json',
 			beforeSend : function(jqXHR, settings ){
 				//alert(url);

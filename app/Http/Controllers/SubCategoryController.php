@@ -82,4 +82,25 @@ class SubCategoryController extends Controller
         return Redirect::to('/admin/sub-category')->with($notification);
 
     }
+ function sub_change_status(Request $request){
+    $status = $this->SubCategoryModel->GetSubCategoryDetail($request->sub_category_id)[0];
+    if($status->status=='Active'){
+            $data = array('id'=>$request->sub_category_id,'status'=>'Inactive');
+            $this->SubCategoryModel->AddSubCategory($data);
+            echo 'Inactive';
+        }
+
+        if($status->status=='Inactive'){
+            $data = array('id'=>$request->sub_category_id,'status'=>'Active');
+            $this->SubCategoryModel->AddSubCategory($data);
+            echo 'Active';
+        }
+    
+    
+
+
+ }
+
+
+ ///////////////// End Class ////////////////////////
 }
