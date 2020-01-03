@@ -4,6 +4,8 @@ namespace App\Library;
 use Illuminate\Support\Facades\URL;
 use Log;
 use Crypt;
+use DB;
+use Session;
 
 class Helper
 {
@@ -16,6 +18,12 @@ class Helper
     	
 
     }
+
+
+    function perticularFlied($table,$fliedName,$where=array()){
+    	return DB::table($table)->select($fliedName)->where($where)->get();
+	}
+
 
 	
 }

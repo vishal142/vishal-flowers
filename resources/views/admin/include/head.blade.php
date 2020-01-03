@@ -61,7 +61,7 @@
     <script src="{{asset('admin_asset/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('admin_asset/tokenize/js/tokenize2.js')}}"></script>
     <script src="{{asset('admin_asset/froala/js/froala_editor.pkgd.min.js')}}"></script>
-    <script src="{{asset('admin_asset/ckeditor/ckeditor.js')}}"></script>
+    <!-- <script src="{{asset('admin_asset/ckeditor/ckeditor.js')}}"></script> -->
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
