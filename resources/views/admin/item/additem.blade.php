@@ -173,6 +173,9 @@
 
             <?php } ?>
 
+
+            <?php echo $ItemDetail->occasion_type;?>
+
             <div class="form-group">
               <div class="col-sm-9">
                   <label for="inputEmail3" class="col-sm-3 control-label">Occasion Type</label>

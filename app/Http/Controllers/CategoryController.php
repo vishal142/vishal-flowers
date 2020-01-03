@@ -9,6 +9,7 @@ use log;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Redirect;
 
+
 class CategoryController extends Controller
 {
 	public function __construct(){
@@ -77,7 +78,7 @@ class CategoryController extends Controller
         );
 
         $last_id = $this->CategoryModel->AddCategoery($data);
-        $slug_data = array('id'=>$last_id,'category_slug'=>strtolower(str_replace(" ", "-", $request->category_name.'-WB')));
+        $slug_data = array('id'=>$last_id,'category_slug'=>strtolower(str_replace(" ", "-", $request->category_name.'-india')));
         
         $this->CategoryModel->AddCategoery($slug_data,'category_slug');
 

@@ -60,7 +60,7 @@ class SubCategoryController extends Controller
 
     		$last_id = $this->SubCategoryModel->AddSubCategory($data);
 
-    		$slug_data = array('id'=>$last_id,'slug'=>strtolower(str_replace(" ", "-", $request->sub_category_name.'-WB')));
+    		$slug_data = array('id'=>$last_id,'slug'=>strtolower(str_replace(" ", "-", $request->sub_category_name.'-india')));
         
         $this->SubCategoryModel->AddSubCategory($slug_data);
 
