@@ -33,5 +33,17 @@ class ItemModel extends Model
 
   	}
 
+  	public function AddItem($data = array()){
+  		if($data['id']!=''){
+  			DB::table('tbl_item')->where('id', $data['id'])->update($data);
+	    	return $data['id'];
+
+  		}else{
+  			return ItemModel::insertGetId($data);
+
+  		}
+
+  	}
+
 ///////// End Class /////////////    
 }

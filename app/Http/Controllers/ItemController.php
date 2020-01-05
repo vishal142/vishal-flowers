@@ -68,7 +68,54 @@ class ItemController extends Controller
     }
 
  public function add_item_data(Request $request){
-    dd($request->input());
+    $occasionType = implode(",",$request->occasionType);
+    $data = array(
+        'id'=>$request->sub_category_id,
+        'category_id'=>$request->category_id,
+        'sub_cat_id'=>$request->add_sub_category_id,
+        'item_name'=>$request->item_name,
+        'item_price'=>$request->item_price,
+        'secial_price'=>$request->special_price,
+        'item_code'=>'123456',
+        'description'=>$request->item_description,
+        'stock'=>$request->stock,
+        'double_the_quantity_price'=>$request->double_qty_price,
+        'double_qty_description'=>$request->double_qty_description,
+        'shown_short_description'=>$request->shown_short_description,
+        'upgrade_option_price'=>$request->upgrade_option_price,
+        'upgrade_option_description'=>$request->upgrade_option_description,
+        'meta_tilte'=>$request->meta_tilte,
+        'meta_description'=>$request->meta_description,
+        'sequence_order'=>'0',
+        'occasion_type'=>$occasionType,
+        'user_id'=>Session::get('currentUser')->id,
+        'created_at'=>date('Y-m-d H:i:s'),
+        'updated_at'=>date('Y-m-d H:i:s')
+        );
+        //echo "<pre>";print_r($data); exit;
+        $last_id = $this->ItemModel->AddItem($data);
+        $slug_data = array('id'=>$last_id,'item_slug'=>strtolower(str_replace(" ", "-", $request->item_name.'-india')),'sequence_order'=>$last_id);
+        
+        $this->ItemModel->AddItem($slug_data);
+
+         if($request->sub_category_id !=''){
+            $notification = array(
+                'message' => 'Item Update Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }else{
+            $notification = array(
+                'message' => 'Item Add Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }
+        
+
+        return Redirect::to('/admin/item')->with($notification);
+
+
 
  }
 

@@ -55,10 +55,6 @@ class SubCategoryData extends Migration
             ['cat_id'=>'5','slug'=>'romance-india','sub_cat_name'=>'Romance','description'=>'Romance Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
             ['cat_id'=>'5','slug'=>'sorry-india','sub_cat_name'=>'Sorry','description'=>'Sorry Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
             ['cat_id'=>'5','slug'=>'halloween-india','sub_cat_name'=>'Halloween','description'=>'Halloween Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
-            ['cat_id'=>'5','slug'=>'','sub_cat_name'=>'','description'=>' Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
-
-
-            
         ]);
 
 

@@ -109,6 +109,8 @@
     </section>
     <!-- /.content -->
   </div>
+  @section('script')
+@stop
 <script>
 $(window).load(function(e) {
 	$('#example1 th:nth-child(1)').removeClass('sorting').removeClass('no_sort sorting_asc').css('width','21px');
@@ -168,7 +170,5 @@ function delete_user(id,editID){
 
 
 </script>
-@section('script')
-@stop
 
 @stop

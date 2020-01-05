@@ -68,7 +68,7 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Sub Category<span class="red">*</span></label>
                   <div class="col-sm-9">
-                   <select name ="sub_category_id" id="sub_category_id" class="form-control chosen-select" onchange="">
+                   <select name ="add_sub_category_id" id="add_sub_category_id" class="form-control chosen-select">
                        <option value="">Select Sub Category </option>
                        
                    </select>
@@ -118,8 +118,16 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Double The Quantity Price</label>
                   <div class="col-sm-9">
-                    <input type="text" name="double_the_quantity_price" placeholder="Double The Quantity Price" class="col-xs-10 col-sm-5 form-control" value="<?php echo ($ItemDetail->double_the_quantity_price?$ItemDetail->double_the_quantity_price : '');?>" />
+                    <input type="text" name="double_qty_price" placeholder="Double The Quantity Price" class="col-xs-10 col-sm-5 form-control" value="<?php echo ($ItemDetail->double_the_quantity_price?$ItemDetail->double_the_quantity_price : '');?>" />
                    
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Double The Quantity Description</label>
+                  <div class="col-sm-9">
+                    <textarea name="double_qty_description" placeholder="Meta Tilte" class="col-xs-10 col-sm-5 form-control"/><?php echo htmlentities(($ItemDetail->double_qty_description?$ItemDetail->double_qty_description : ''));?></textarea>
+                     
                   </div>
                 </div>
 
@@ -130,11 +138,18 @@
                    
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Upgrade Option Description</label>
+                  <div class="col-sm-9">
+                    <textarea name="upgrade_option_description" placeholder="Meta Tilte" class="col-xs-10 col-sm-5 form-control"/><?php echo htmlentities(($ItemDetail->upgrade_option_description?$ItemDetail->upgrade_option_description : ''));?></textarea>
+                     
+                  </div>
+                </div>
 
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Meta Tilte</label>
                   <div class="col-sm-9">
-                    <textarea name="meta_tilte" placeholder="Description" class="col-xs-10 col-sm-5 form-control"/><?php echo htmlentities(($ItemDetail->meta_tilte?$ItemDetail->meta_tilte : ''));?></textarea>
+                    <textarea name="meta_tilte" placeholder="Meta Tilte" class="col-xs-10 col-sm-5 form-control"/><?php echo htmlentities(($ItemDetail->meta_tilte?$ItemDetail->meta_tilte : ''));?></textarea>
                      
                   </div>
                 </div>
@@ -179,13 +194,18 @@
             <div class="form-group">
               <div class="col-sm-9">
                   <label for="inputEmail3" class="col-sm-3 control-label">Occasion Type</label>
-                  <?php foreach($occasionTpye as $os){
-                    //print_r($os['id']).'<br>';
-                    $occasion = explode(',',$ItemDetail->occasion_type);
-                    //print_r($occasion);
-                    $checked = in_array($os['id'],$occasion);
+                  <?php 
+                  $occasion_type = [];
+                  foreach($occasionTpye as $os){
+                    $occasion_type = $ItemDetail->occasion_type;
+                    //print_r().'<br>';
+                    //exit;
+                    $occasion = explode(',',$occasion_type);
+                    //print_r($occasion_type);
+                    //exit;
+                    $checked = in_array($os->id,$occasion);
                     ?>
-                    <?php echo $os['sub_cat_name']; ?><input type="checkbox" name="occasionType[]" id="tag_1" value="<?php echo $os['id'];?>" <?php echo ($checked ? 'checked' : '');?>>
+                    <?php echo $os->sub_cat_name; ?><input type="checkbox" name="occasionType[]" id="tag_1" value="<?php echo $os->id;?>" <?php echo ($checked ? 'checked' : '');?>>
                   <?php }?>
 
                  
@@ -245,7 +265,7 @@ $(document).ready(function() {
                 }
             },
 
-            sub_category_id: {
+            add_sub_category_id: {
                 validators: {
                     notEmpty: {
                         message: 'Sub Category name is required and cannot be empty'
@@ -315,10 +335,10 @@ $(document).ready(function() {
  	$.ajax({
 	    method:'POST',
 	    url:'/admin/item/selected-sub-cat',
-	    data:{'category_id':val,'sub_cat_id':id},
+	    data:{'category_id':val,'sub_cat_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
 	    success:function(data){
 	      //alert(data);
-	      $('#sub_category_id').html(data).trigger('chosen:updated');
+	      $('#add_sub_category_id').html(data).trigger('chosen:updated');
 
 	    }
 	  });
