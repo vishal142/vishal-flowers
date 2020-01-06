@@ -38,7 +38,7 @@
              <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Item Slug</label>
                   <div class="col-sm-9">
-                    <input type="text" id="" name="alias" placeholder="" class="col-xs-10 col-sm-5 form-control" value="" readonly/>
+                    <input type="text" id="" name="alias" placeholder="" class="col-xs-10 col-sm-5 form-control" value="<?php echo ($ItemDetail->item_slug?$ItemDetail->item_slug : '');?>" readonly/>
                   </div>
                 </div>
                 <div class="form-group has-feedback">
@@ -182,7 +182,7 @@
                   <div class="form-group">
                         <label for="inputEmail3" class="col-sm-3 control-label">Item Image</label>
                         <div class="col-sm-9">
-                          <img src="" height="100" width="150">
+                          <img src="{{ URL::to('/uploads/item_image/'.$ItemDetail->item_image) }}" height="150" width="200">
                         </div>
                   </div>
 
@@ -317,14 +317,17 @@ $(document).ready(function() {
                     }
                 }
             },
-            // item_image :{
-            // 	validators: {
-            //         notEmpty: {
-            //             message: 'Item Image is required and cannot be empty'
-            //         }
-            //     }
 
-            // }
+            <?php if($ItemDetail->id ==''){ ?>
+            item_image :{
+            	validators: {
+                    notEmpty: {
+                        message: 'Item Image is required and cannot be empty'
+                    }
+                }
+
+            }
+          <?php } ?>
 
         }
     });
