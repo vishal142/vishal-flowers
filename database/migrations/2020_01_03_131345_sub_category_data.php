@@ -55,6 +55,20 @@ class SubCategoryData extends Migration
             ['cat_id'=>'5','slug'=>'romance-india','sub_cat_name'=>'Romance','description'=>'Romance Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
             ['cat_id'=>'5','slug'=>'sorry-india','sub_cat_name'=>'Sorry','description'=>'Sorry Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
             ['cat_id'=>'5','slug'=>'halloween-india','sub_cat_name'=>'Halloween','description'=>'Halloween Content Coming soon...!!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+
+            ['cat_id'=>'6','slug'=>'gifts-for-new-born-india','sub_cat_name'=>'Gifts For New Born','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+
+            ['cat_id'=>'6','slug'=>'fruit-baskets-india','sub_cat_name'=>'Fruit Baskets','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+            ['cat_id'=>'6','slug'=>'chocolates-india','sub_cat_name'=>'Chocolates','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+            ['cat_id'=>'6','slug'=>'tedy-bears-india','sub_cat_name'=>'Tedy Bears','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+            ['cat_id'=>'6','slug'=>'hampers-india','sub_cat_name'=>'Hampers','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+
+            ['cat_id'=>'7','slug'=>'chocolate-cakes-india','sub_cat_name'=>'Chocolate Cakes','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+            ['cat_id'=>'7','slug'=>'anniversary-cakes-india','sub_cat_name'=>'Anniversary Cakes','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+
+            ['cat_id'=>'7','slug'=>'birthday-cakes-india','sub_cat_name'=>'Birthday Cakes','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+             ['cat_id'=>'7','slug'=>'designer-cakes-india','sub_cat_name'=>'Designer Cakes','description'=>'Content Coming Soon..!!','user_id'=>'1','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+
         ]);
 
 
