@@ -96,7 +96,23 @@ class ItemController extends Controller
         $last_id = $this->ItemModel->AddItem($data);
         $slug_data = array('id'=>$last_id,'item_slug'=>strtolower(str_replace(" ", "-", $request->item_name.'-india')),'sequence_order'=>$last_id);
         
-        $this->ItemModel->AddItem($slug_data);
+        $last_id = $this->ItemModel->AddItem($slug_data);
+        if($request->hasFile('item_image'))
+        {
+            $image = $request->file('item_image');
+
+            $imagefileName = pathinfo($image->getClientOriginalExtension(), PATHINFO_FILENAME);
+            //$file = Input::file('file');
+            $filename = $last_id .'.'. $image->getClientOriginalExtension();
+            
+            $path = public_path('uploads/item_image');
+            //dd($path);
+            $imagepath = $request->item_image->move($path, $filename);
+            $image_data = array('id'=>$last_id,'item_image'=>$filename);
+            $last_id = $this->ItemModel->AddItem($image_data);
+        }
+
+
 
          if($request->sub_category_id !=''){
             $notification = array(
@@ -118,6 +134,27 @@ class ItemController extends Controller
 
 
  }
+
+  public function item_change_status(Request $request){
+        $postData = $request->all();
+        $item_id = $postData['item_id'];
+        $status = $this->ItemModel->ItemDetail($item_id)[0];
+        if($status->status=='Active'){
+            $data = array('id'=>$item_id,'status'=>'Inactive');
+            $this->ItemModel->AddItem($data);
+            echo 'Inactive';
+
+
+        }
+
+        if($status->status=='Inactive'){
+            $data = array('id'=>$item_id,'status'=>'Active');
+            $this->ItemModel->AddItem($data);
+            echo 'Active';
+
+        }
+    }
+
 
 ////////////////////// End Class ////////////////////////////    
 }

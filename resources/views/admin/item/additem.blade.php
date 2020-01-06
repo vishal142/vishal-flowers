@@ -317,14 +317,14 @@ $(document).ready(function() {
                     }
                 }
             },
-            item_image :{
-            	validators: {
-                    notEmpty: {
-                        message: 'Item Image is required and cannot be empty'
-                    }
-                }
+            // item_image :{
+            // 	validators: {
+            //         notEmpty: {
+            //             message: 'Item Image is required and cannot be empty'
+            //         }
+            //     }
 
-            }
+            // }
 
         }
     });

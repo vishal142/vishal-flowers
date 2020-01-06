@@ -10,6 +10,7 @@ use App\Model\CategoryModel;
 use Illuminate\Support\Facades\Redirect;
 use Log;
 use Session;
+use App\Library\helper as Helpers;
 
 class SubCategoryController extends Controller
 {

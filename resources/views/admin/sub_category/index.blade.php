@@ -62,16 +62,20 @@
 				$i = '1';
 					foreach($recordset as $row)
 					{
-						print_r($row);
+						//print_r($row);
 						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
+						$obj  = (new \App\Library\helper)->perticularFlied('tbl_category','category_name',array('id'=>$row->cat_id));
+						$cat_data = json_decode($obj);
+
 						$editLink = '/admin/sub-category/update-sub-category/'.$row->id;
+						
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $row->cat_id;?></td>
+                  <td><?php echo $cat_data[0]->category_name;?></td>
                   <td><?php echo ucfirst($row->sub_cat_name);?></td>
                   <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row->id;?>');" id="cng_status<?php echo $row->id;?>" class="<?php echo ($row->status=='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row->status=='Active')?'Active':'Inactive';?></a></td>
 

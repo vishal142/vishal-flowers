@@ -33,7 +33,7 @@ class ItemTable extends Migration
                 $table->text('double_qty_description');
                 $table->text('shown_short_description');
                 $table->double('upgrade_option_price');
-                $table->text('upgrade_option_description');
+                $table->text('upgrade_option_description')->nullable();
                 $table->text('meta_tilte');
                 $table->text('meta_description');
                 $table->Integer('sequence_order');

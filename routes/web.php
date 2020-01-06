@@ -44,3 +44,4 @@ Route::get('admin/item/add-item','ItemController@AddItem');
 Route::get('admin/item/edit-item/{item_id}','ItemController@AddItem');
 Route::post('admin/item/selected-sub-cat','ItemController@selectedSubCat');
 Route::post('admin/item/add-item-data','ItemController@add_item_data');
+Route::post('admin/item/item-change-status','ItemController@item_change_status');

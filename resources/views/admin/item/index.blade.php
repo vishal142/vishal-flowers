@@ -63,26 +63,29 @@
 				$i = '1';
 					foreach($recordset as $row)
 					{
-						print_r($row);
+						//echo "<pre>";print_r($row);
 						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
 						$editLink = '/admin/item/edit-item/'.$row->id;
+            $obj = (new \App\Library\helper)->perticularFlied('tbl_category','category_name',array('id'=>$row->category_id));
+            $obj1 = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','sub_cat_name',array('id'=>$row->sub_cat_id));
+            $cat_data = json_decode($obj);
+            $sub_data = json_decode($obj1);
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $row->id;?></td>
-                  <td><?php echo $row->id;?></td>
-                  <td><?php echo $row->id;?></td>
-                  <td><?php echo $row->id;?></td>
-                  <td><?php echo $row->id;?></td>
-                  <td><?php echo $row->id;?></td>
-
-                  <td><?php echo ucfirst($row->id);?></td>
+                  <td><img src="{{ URL::to('/uploads/item_image/'.$row->item_image) }}" height="60" width="80"></td>
+                  <td><?php echo $cat_data[0]->category_name;?></td>
+                  <td><?php echo $sub_data[0]->sub_cat_name;?></td>
+                  <td><?php echo $row->item_name;?></td>
+                  <td><?php echo $row->item_code;?></td>
+                  <td><?php echo $row->item_price;?></td>
+                  <td></td>
                   <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row->id;?>');" id="cng_status<?php echo $row->id;?>" class="<?php echo ($row->status=='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row->status=='Active')?'Active':'Inactive';?></a></td>
 
-                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->id);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
+                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->status);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
                 
                 </tr>
                 <?php
@@ -122,9 +125,9 @@ function change_status(id){
 	if(confirm("Are you sure to change status of this record?"))
 	{
 		$.ajax({
-			url : baseurl+'/admin/category/change_status',
+			url : baseurl+'/admin/item/item-change-status',
 			type : 'POST',
-			data : {'category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
+			data : {'item_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
 			//dataType : 'json',
 			beforeSend : function(jqXHR, settings ){
 				//alert(url);
