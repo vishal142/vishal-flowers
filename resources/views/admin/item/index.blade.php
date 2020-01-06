@@ -50,6 +50,7 @@
                   <th>Item Code</th>
                   <th>Item Price</th>
                   <th>Hike price</th>
+                  <th>Stock</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -83,6 +84,7 @@
                   <td><?php echo $row->item_code;?></td>
                   <td><?php echo $row->item_price;?></td>
                   <td></td>
+                  <td><?php echo $row->stock;?></td>
                   <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row->id;?>');" id="cng_status<?php echo $row->id;?>" class="<?php echo ($row->status=='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row->status=='Active')?'Active':'Inactive';?></a></td>
 
                   <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->status);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
