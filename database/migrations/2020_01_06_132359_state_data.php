@@ -14,7 +14,7 @@ class StateData extends Migration
     public function up()
     {
         DB::table('tbl_state')->insert([
-            ['short_name'=>'AR','state_name'=>'Arunachal Pradesh','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
+            ['short_name'=>'AP','state_name'=>'Arunachal Pradesh','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
             ['short_name'=>'AS','state_name'=>'Assam','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
 
             ['short_name'=>'BR','state_name'=>'Bihar','created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d')],
