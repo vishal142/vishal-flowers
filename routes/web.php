@@ -45,3 +45,6 @@ Route::get('admin/item/edit-item/{item_id}','ItemController@AddItem');
 Route::post('admin/item/selected-sub-cat','ItemController@selectedSubCat');
 Route::post('admin/item/add-item-data','ItemController@add_item_data');
 Route::post('admin/item/item-change-status','ItemController@item_change_status');
+Route::get('admin/city','CityController@index');
+Route::get('admin/city/edit-city/{city_id}','CityController@EditCity');
+Route::post('admin/city/add-city-data/','CityController@AddCityData');

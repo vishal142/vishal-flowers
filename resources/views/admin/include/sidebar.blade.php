@@ -26,6 +26,12 @@
             <i class="fa fa-dashboard"></i> <span>Item List</span>
           </a>
         </li>
+
+        <li class="treeview {{ Route::currentRouteNamed('city') ? 'active' : ''  }}">
+          <a href="/admin/city">
+            <i class="fa fa-dashboard"></i> <span>City List</span>
+          </a>
+        </li>
     
 
     </ul>
