@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
 use App\Model\CityModel;
+use App\Model\DeliveryChargeModel;
 use Illuminate\Http\Request;
 use Session;
 use log;
@@ -13,6 +14,7 @@ class CityController extends Controller
 {
     public function __construct(){
     	$this->CityModel = new CityModel();
+        $this->DeliveryChargeModel = new DeliveryChargeModel();
 
     }
 
@@ -47,7 +49,53 @@ class CityController extends Controller
  		'delivery_frequency'=>$request->delivery_frequency,
  		'updated_at'=>date('Y-m-d H:i:s')
  	);
- 	dd($data);
+ 	$this->CityModel->Addcity($data);
+    if($request->city_id !=''){
+            $notification = array(
+                'message' => 'City Update Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }else{
+            $notification = array(
+                'message' => 'City Add Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }
+        
+
+        return Redirect::to('/admin/city')->with($notification);
+
+ }
+
+ function add_delivery_data(Request $request){
+    $data = array(
+        'id'=>$request->delivery_id,
+        'city_id'=>$request->city_id,
+        'from_time'=>$request->from_time,
+        'to_time'=>$request->to_time,
+        'delivery_charge'=>$request->delivery_charge,
+        'updated_at'=>date('Y-m-d H:i:s'),
+        );
+    //dd($data);
+    $this->DeliveryChargeModel->AddDeliveryCharge($data);
+    if($request->city_id !=''){
+            $notification = array(
+                'message' => 'Delivery Charged Update Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }else{
+            $notification = array(
+                'message' => 'Delivery Charged Added Sucessfully',
+                'alert-type' => 'success'
+            );
+
+        }
+        
+
+        return Redirect::to('/admin/city')->with($notification);
 
  }
 

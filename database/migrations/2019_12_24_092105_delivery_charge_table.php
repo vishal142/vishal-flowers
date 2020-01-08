@@ -20,7 +20,7 @@ class DeliveryChargeTable extends Migration
                 $table->bigInteger('city_id');
                 $table->time('from_time');
                 $table->time('to_time');
-                $table->double('delivert_charge',15,2);
+                $table->double('delivery_charge',15,2);
                 $table->enum('delivery_status',['Active','Inactive'])->default('Active');
                 $table->timestamps();
                 $table->charset = 'utf8';

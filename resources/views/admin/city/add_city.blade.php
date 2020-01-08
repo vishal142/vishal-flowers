@@ -103,7 +103,8 @@
               <!-- /.box-footer -->
             </form>
 
-              <form class="form-horizontal" id="frm_delivery" name="frm_user" method="post" action="admin/city/add_delivery_data" enctype="multipart/form-data">
+              <form class="form-horizontal" id="frm_delivery" name="frm_user" method="post" action="/admin/city/add-delivery-data" enctype="multipart/form-data">
+               @csrf
               <div class="box-body">
 
               <div class="form-group">

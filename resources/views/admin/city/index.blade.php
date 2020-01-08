@@ -69,11 +69,13 @@
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
 						$editLink = '/admin/city/edit-city/'.$row->id;
+            $obj = (new \App\Library\helper)->perticularFlied('tbl_state','state_name',array('id'=>$row->state_id));
+            $state_data = json_decode($obj);
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $row->id;?></td>
+                  <td><?php echo $state_data[0]->state_name;?></td>
                   <td><?php echo $row->city_name;?></td>
                   <td><?php echo $row->midnight_delivery;?></td>
                   <td><?php echo ucfirst($row->delivery_frequency);?></td>

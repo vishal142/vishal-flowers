@@ -48,3 +48,4 @@ Route::post('admin/item/item-change-status','ItemController@item_change_status')
 Route::get('admin/city','CityController@index');
 Route::get('admin/city/edit-city/{city_id}','CityController@EditCity');
 Route::post('admin/city/add-city-data/','CityController@AddCityData');
+Route::post('admin/city/add-delivery-data','CityController@add_delivery_data');
