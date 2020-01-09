@@ -52,3 +52,4 @@ Route::post('admin/city/add-delivery-data','CityController@add_delivery_data');
 Route::post('admin/city/GetDeliveryChargeDetail','CityController@GetDeliveryChargeDetail');
 Route::post('admin/city/change-status','CityController@change_status');
 Route::post('admin/city/change-delivery-status','CityController@change_delivery_status');
+Route::get('admin/hike','HikeController@index');

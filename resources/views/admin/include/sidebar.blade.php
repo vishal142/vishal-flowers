@@ -33,6 +33,12 @@
           </a>
         </li>
     
+    <li class="treeview {{ Route::currentRouteNamed('city') ? 'active' : ''  }}">
+          <a href="/admin/hike">
+            <i class="fa fa-dashboard"></i> <span>Hike List</span>
+          </a>
+        </li>
+
 
     </ul>
     </section>
