@@ -40,7 +40,7 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">State Name</label>
                   <div class="col-sm-9">
-                    <select name="state_id" id="midnight_delivery" class="form-control">
+                    <select name="state_id" id="midnight_delivery" class="form-control" disabled>
                         <option value="">Select State</option>
                         <?php foreach($getAllstate as $state): ?>
                         <option value="<?=$state->id;?>" <?=$state->id == $city_detail->state_id ? ' selected="selected"' : '';?>><?=$state->state_name;?></option>
@@ -91,7 +91,7 @@
                 
               </div>
               <!-- /.box-body -->
-			  <?php $back_link = 'admin/item'; ?>
+			  <?php $back_link = '/admin/city'; ?>
               <div class="box-footer">
               	<div class="col-sm-8">
 
@@ -149,7 +149,7 @@
                   <th>City Name</th>
                   <th>From Time</th>
                   <th>To Time</th>
-                  <th>Delivert Charge</th>
+                  <th>Delivery Charge</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -157,28 +157,28 @@
                 <tbody>
                  <?php
 
-        if($city_recordset)
+        if($AllDeliveryCharge)
         {
         $startRecord ='0';
         $i = '1';
-          foreach($city_recordset as $row1)
+          foreach($AllDeliveryCharge as $row1)
           {
             //$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
             //$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
             //$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
-            $editLink = 'admin/category/add_category/'.$row1->delivery_charges_id;
+            $editLink = 'admin/category/add_category/'.$row1->id;
         ?>
-                <tr id="tr<?php echo $row1->delivery_charges_id; ?>">
+                <tr id="tr<?php echo $row1->id; ?>">
                   <td><?php echo $i; ?></td>
                  
-                  <td><?php echo $row1->city_name; ?></td>
+                  <td><?php echo $row1->city_id; ?></td>
                   <td><?php echo $row1->from_time; ?></td>
                  <td><?php echo $row1->to_time; ?></td>
-                  <td><?php echo $row1->delivert_charge; ?></td>
-                  <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row1['delivery_charges_id']; ?>');" id="cng_status<?php echo $row1['delivery_charges_id']; ?>" class="<?php echo ($row1->delivery_status =='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row1->delivery_status =='Active')?'Active':'Inactive';?></a></td>
+                  <td><?php echo $row1->delivery_charge; ?></td>
+                  <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row1->id; ?>');" id="cng_status<?php echo $row1->id; ?>" class="<?php echo ($row1->delivery_status =='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row1->delivery_status =='Active')?'Active':'Inactive';?></a></td>
 
                   <td>
-                  <a class="btn btn-xs btn-info" href="" title="Update Delivery Charge" data-toggle="modal" data-target="#myModal" onclick="GetDeliveryCharge('<?php echo $row1->delivery_charges_id; ?>')"><i class="ace-icon fa fa-pencil bigger-120"></i> </a> 
+                  <a class="btn btn-xs btn-info" href="#" title="Update Delivery Charge" data-toggle="modal" data-target="#myModal" onclick="GetDeliveryCharge('<?php echo $row1->id; ?>')"><i class="ace-icon fa fa-pencil bigger-120"></i> </a> 
                  
                  <!-- <a class="btn btn-xs btn-danger" href="javascript:void(0);" title="Delete User" onclick="delete_user('<?php //echo $row1['id']; ?>');"> <i class="ace-icon fa fa-trash-o bigger-120"></i> </a> -->
                  </td>
@@ -221,7 +221,8 @@
         </div>
         <div class="modal-body">
 
-          <form class="form-horizontal" id="frm_update_delivery" name="frm_user" method="post" action="admin/city/add_delivery_data" enctype="multipart/form-data">
+          <form class="form-horizontal" id="frm_update_delivery" name="frm_user" method="post" action="/admin/city/add-delivery-data" enctype="multipart/form-data">
+            @csrf
               <div class="box-body">
 
               <div class="form-group">
@@ -241,7 +242,7 @@
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Delivery Charge<span class="red">*</span></label>
                   <div class="col-sm-9">
-                    <input type="text" id="update_delivery_charge" name="delivery_charge" placeholder="Delivery Charge" class="col-xs-10 col-sm-5 form-control" value="" required=""/>
+                    <input type="text" id="update_delivery_charge1" name="delivery_charge"value="1" placeholder="Delivery Charge" class="col-xs-10 col-sm-5 form-control" required=""/>
                   </div>
               </div>
 
@@ -269,6 +270,9 @@
     </div>
   </div>
 <!-- End Modal -->
+@section('script')
+@stop
+
 <script type="application/javascript">
 $(document).ready(function() {
     $('#frm_user').bootstrapValidator({
@@ -310,7 +314,7 @@ function change_status(id){
   if(confirm("Are you sure to change status of this record?"))
   {
     $.ajax({
-      url : '<?php 'admin/city/changedeliverystatus/';?>',
+      url : '/admin/city/changedeliverystatus',
       type : 'POST',
       data : 'id=' + id,
       //dataType : 'json',
@@ -380,14 +384,13 @@ $(document).ready(function() {
   var city_id = '{{request()->route('city_id')}}';
   $.ajax({
       type:'POST',
-      url:'<?php echo 'admin/city/GetDeliveryChargeDetail';?>',
+      url:'/admin/city/GetDeliveryChargeDetail',
       data:{'id':val,'city_id':city_id},
       dataType: "json",
       success: function(data){
-       // alert(data[0].id);
        $('#update_from_time').val(data[0].from_time);
        $('#update_to_time').val(data[0].to_time);
-       $('#update_delivery_charge').val(data[0].delivert_charge);
+       $('#update_delivery_charge1').val(data[0].delivery_charge);
        $('#update_delivery_id').val(data[0].id);
 
       }
@@ -427,8 +430,5 @@ $(document).ready(function() {
 });
 
 </script>
-
-@section('script')
-@stop
 
 @stop

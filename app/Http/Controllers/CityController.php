@@ -27,7 +27,8 @@ class CityController extends Controller
 
     public function EditCity(Request $request){
     	$data['getAllstate'] = $this->CityModel->getAllState();
-    	if($request->city_id !=''){
+        $data['AllDeliveryCharge'] = $this->DeliveryChargeModel->GetDeliveryCharge($request->city_id);
+        if($request->city_id !=''){
                 $data['page_title']='Update City';
                 $data['breadcrumb'] = '<li><i class="ace-icon fa fa-home home-icon"></i><a href="/admin/dashboard">Home</a></li><li><a href="/admin/category">City List</a></li><li class="active">Update City</li>';
 
@@ -43,7 +44,6 @@ class CityController extends Controller
  public function AddCityData(Request $request){
  	$data = array(
  		'id'=>$request->city_id,
- 		'state_id'=>$request->state_id,
  		'city_name'=>$request->city_name,
  		'midnight_delivery'=>$request->midnight_delivery,
  		'delivery_frequency'=>$request->delivery_frequency,
@@ -80,7 +80,7 @@ class CityController extends Controller
         );
     //dd($data);
     $this->DeliveryChargeModel->AddDeliveryCharge($data);
-    if($request->city_id !=''){
+    if($request->delivery_id !=''){
             $notification = array(
                 'message' => 'Delivery Charged Update Sucessfully',
                 'alert-type' => 'success'
@@ -95,9 +95,17 @@ class CityController extends Controller
         }
         
 
-        return Redirect::to('/admin/city')->with($notification);
+        return Redirect::to('/admin/city/edit-city/'.$request->city_id)->with($notification);
 
  }
 
+
+ function GetDeliveryChargeDetail(Request $request){
+    $delivery_id = $request->id; 
+    $city_id = $request->city_id; 
+    $delivery_detail = $this->DeliveryChargeModel->GetDeliveryDetail($delivery_id);
+    echo json_encode($delivery_detail);
+    }
+ 
  ///////////End Class /////////   
 }

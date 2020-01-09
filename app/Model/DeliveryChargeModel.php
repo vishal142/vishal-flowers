@@ -21,4 +21,18 @@ class DeliveryChargeModel extends Model
             return DeliveryChargeModel::insertGetId($data);
         }
     }
+
+ function GetDeliveryCharge($city_id){
+    $res = DB::table('tbl_delivery_charges')->select('*')->where('id',$city_id)->get();
+    return $res;
+
+ }
+
+ function GetDeliveryDetail($delivery_id){
+    $res = DB::table('tbl_delivery_charges')->select('*')->where('id',$delivery_id)->get();
+    return $res;
+
+ }
+
+///////////// End Class ///////////    
 }

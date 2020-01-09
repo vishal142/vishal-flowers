@@ -64,7 +64,7 @@
 				$i = '1';
 					foreach($recordset as $row)
 					{
-						//print_r($row);
+						//dd($row);
 						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
