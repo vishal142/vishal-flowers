@@ -108,6 +108,8 @@
     </section>
     <!-- /.content -->
   </div>
+  @section('script')
+@stop
 <script>
 $(window).load(function(e) {
 	$('#example1 th:nth-child(1)').removeClass('sorting').removeClass('no_sort sorting_asc').css('width','21px');
@@ -119,9 +121,9 @@ function change_status(id){
 	if(confirm("Are you sure to change status of this record?"))
 	{
 		$.ajax({
-			url : baseurl+'/admin/category/change_status',
+			url : baseurl+'/admin/city/change-status',
 			type : 'POST',
-			data : {'category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
+			data : {'city_id':id},
 			//dataType : 'json',
 			beforeSend : function(jqXHR, settings ){
 				//alert(url);
@@ -167,7 +169,6 @@ function delete_user(id,editID){
 
 
 </script>
-@section('script')
-@stop
+
 
 @stop

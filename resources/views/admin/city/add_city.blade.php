@@ -175,7 +175,7 @@
                   <td><?php echo $row1->from_time; ?></td>
                  <td><?php echo $row1->to_time; ?></td>
                   <td><?php echo $row1->delivery_charge; ?></td>
-                  <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row1->id; ?>');" id="cng_status<?php echo $row1->id; ?>" class="<?php echo ($row1->delivery_status =='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row1->delivery_status =='Active')?'Active':'Inactive';?></a></td>
+                  <td><a href="javascript:void(0);" onclick="change_delivery_status('<?php echo $row1->id; ?>');" id="cng_status<?php echo $row1->id; ?>" class="<?php echo ($row1->delivery_status =='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row1->delivery_status =='Active')?'Active':'Inactive';?></a></td>
 
                   <td>
                   <a class="btn btn-xs btn-info" href="#" title="Update Delivery Charge" data-toggle="modal" data-target="#myModal" onclick="GetDeliveryCharge('<?php echo $row1->id; ?>')"><i class="ace-icon fa fa-pencil bigger-120"></i> </a> 
@@ -309,19 +309,20 @@ $(document).ready(function() {
 });
 
 
-function change_status(id){
+function change_delivery_status(id){
   
   if(confirm("Are you sure to change status of this record?"))
   {
     $.ajax({
-      url : '/admin/city/changedeliverystatus',
+      url : '/admin/city/change-delivery-status',
       type : 'POST',
-      data : 'id=' + id,
+      data : {'delivery_id':id},
       //dataType : 'json',
       beforeSend : function(jqXHR, settings ){
         //alert(url);
       },
       success : function(data, textStatus, jqXHR){
+        //alert(data);
         $('#cng_status'+id).removeClass('activebutton').removeClass('inactivebutton').addClass(data.toLowerCase()+'button');
         $('#cng_status'+id).html(data);
       },

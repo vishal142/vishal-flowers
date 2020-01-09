@@ -107,5 +107,44 @@ class CityController extends Controller
     echo json_encode($delivery_detail);
     }
  
+ public function change_status(Request $request){
+    $status = $this->CityModel->CityDetail($request->city_id)[0];
+        if($status->status=='Active'){
+            $data = array('id'=>$request->city_id,'status'=>'Inactive');
+            $this->CityModel->Addcity($data);
+            echo 'Inactive';
+
+
+        }
+
+        if($status->status=='Inactive'){
+            $data = array('id'=>$request->city_id,'status'=>'Active');
+            $this->CityModel->Addcity($data);
+            echo 'Active';
+
+        }
+
+ }
+
+ public function change_delivery_status(Request $request){
+    $status = $this->DeliveryChargeModel->GetDeliveryDetail($request->delivery_id)[0];
+        if($status->delivery_status=='Active'){
+            $data = array('id'=>$request->delivery_id,'delivery_status'=>'Inactive');
+            $this->DeliveryChargeModel->AddDeliveryCharge($data);
+            echo 'Inactive';
+
+
+        }
+
+        if($status->delivery_status=='Inactive'){
+            $data = array('id'=>$request->delivery_id,'delivery_status'=>'Active');
+            $this->DeliveryChargeModel->AddDeliveryCharge($data);
+            echo 'Active';
+
+        }
+
+
+ }
+
  ///////////End Class /////////   
 }
