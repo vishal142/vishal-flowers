@@ -15,6 +15,24 @@ class HikeModel extends Model
     	return $res;
     }
 
+  public function GethikeDetail($id){
+  	$res = DB::table('tbl_hike_price')->select('*')->get();
+  	return $res;
+
+  }
+
+   public function AddHikePrice($data = array()){
+   	if($data['id'] !=''){
+      DB::table('tbl_hike_price')->where('id', $data['id'])->update($data);
+	    return $data['id'];
+    }else{
+
+    	return HikeModel::insertGetId($data);
+    }
+
+
+   }
+
     
 //////// End Class////////
 }

@@ -1,5 +1,5 @@
 @extends('admin.layouts.default')
-@section('title','Category')
+@section('title','Hike Price')
 @section('content')
 
 <?php 
@@ -37,7 +37,7 @@
             <div class="box-header">
               <h3 class="box-title pull-right">
               
-            <a class="btn btn-success btn-sm" href="/admin/category/add_category"> <i class="ace-icon fa glyphicon-plus white" title="Add User"></i> Add New </a>
+            <a class="btn btn-success btn-sm" href="/admin/hike/add-hike-price"> <i class="ace-icon fa glyphicon-plus white" title="Add User"></i> Add New </a>
              
               </h3>
             </div>
@@ -68,7 +68,7 @@
 						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
 						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
 						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
-						$editLink = '/admin/category/edit_category/'.$row->id;
+						$editLink = '/admin/hike/edit-hike-price/'.$row->id;
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
@@ -118,9 +118,9 @@ function change_status(id){
 	if(confirm("Are you sure to change status of this record?"))
 	{
 		$.ajax({
-			url : baseurl+'/admin/category/change_status',
+			url : baseurl+'/admin/hike/change-status',
 			type : 'POST',
-			data : {'category_id':id,'_token':$('meta[name="csrf-token"]').attr('content')},
+			data : {'hike_id':id},
 			//dataType : 'json',
 			beforeSend : function(jqXHR, settings ){
 				//alert(url);
