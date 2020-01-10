@@ -30,7 +30,7 @@
             
             
 
-            <?php print_r($hikeDetail); ?>
+            <?php //print_r($hikeDetail); ?>
             
             <!-- /.box-header -->
             <!-- form start -->

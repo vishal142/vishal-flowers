@@ -33,6 +33,12 @@ class HikeModel extends Model
 
    }
 
+   public function DeleteHikePrice($id){
+   	DB::table('tbl_hike_price')->where('id', '=', $id)->delete();
+   	return true;
+
+   }
+
     
 //////// End Class////////
 }

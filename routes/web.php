@@ -58,3 +58,5 @@ Route::get('admin/hike/add-hike-price','HikeController@add_hike_price');
 Route::get('admin/hike/edit-hike-price/{hike_id}','HikeController@add_hike_price');
 Route::post('admin/hike/hike-price-data','HikeController@hike_price_data');
 Route::post('admin/hike/change-status','HikeController@change_status');
+
+Route::post('admin/hike/delete-hike-price','HikeController@delete_hike_price');

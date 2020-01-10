@@ -30,7 +30,7 @@
                     <button type="button" class="close" data-dismiss="alert">
                         <i class="ace-icon fa fa-times"></i>
                     </button>
-                        User Delete Successfully
+                        Hike Price Delete Successfully
                     <br>
                 </div>
            
@@ -80,7 +80,9 @@
 
                   <td><a href="javascript:void(0);" onclick="change_status('<?php echo $row->id;?>');" id="cng_status<?php echo $row->id;?>" class="<?php echo ($row->status=='Active')?'activebutton':'inactivebutton';?>"><?php echo ($row->status=='Active')?'Active':'Inactive';?></a></td>
 
-                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->id);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a> </td>
+                  <td><a class="btn btn-xs btn-info" href="<?php echo $editLink;?>" title="Edit <?php echo ucfirst($row->id);?>"> <i class="ace-icon fa fa-pencil bigger-120"></i> </a>
+                  <a class="btn btn-xs btn-danger" href="javascript:void(0);" title="Delete Hike Price" onclick="delete_user('<?php echo $row->id; ?>');"> <i class="ace-icon fa fa-trash-o bigger-120"></i> </a>
+                   </td>
                 
                 </tr>
                 <?php
@@ -107,6 +109,9 @@
     </section>
     <!-- /.content -->
   </div>
+
+@section('script')
+@stop
 <script>
 $(window).load(function(e) {
 	$('#example1 th:nth-child(1)').removeClass('sorting').removeClass('no_sort sorting_asc').css('width','21px');
@@ -139,10 +144,10 @@ function change_status(id){
 }
 
 function delete_user(id,editID){
-	if(confirm("Are you sure to delete of this User ?"))
+	if(confirm("Are you sure to delete of this Hike Price ?"))
 	{
 		$.ajax({
-			url : '',
+			url : '/admin/hike/delete-hike-price',
 			type : 'POST',
 			data : 'id=' + id,
 			//dataType : 'json',
@@ -166,7 +171,4 @@ function delete_user(id,editID){
 
 
 </script>
-@section('script')
-@stop
-
 @stop

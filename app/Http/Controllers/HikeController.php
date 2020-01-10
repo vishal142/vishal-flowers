@@ -91,6 +91,11 @@ class HikeController extends Controller
 
  }
 
+ function delete_hike_price(Request $request){
+ 	$this->HikeModel->DeleteHikePrice($request->id);
+ 	echo "1";
+ }
+
 ////////// End Class //////////////////
 
 }
