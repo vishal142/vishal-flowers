@@ -39,7 +39,8 @@ class ItemModel extends Model
 	    	return $data['id'];
 
   		}else{
-  			return ItemModel::insertGetId($data);
+        $data['item_code']= substr(number_format(time() * mt_rand(0, 999999),0,'',''),0,6);
+        return ItemModel::insertGetId($data);
 
   		}
 

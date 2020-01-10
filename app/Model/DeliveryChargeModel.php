@@ -23,7 +23,7 @@ class DeliveryChargeModel extends Model
     }
 
  function GetDeliveryCharge($city_id){
-    $res = DB::table('tbl_delivery_charges')->select('*')->where('id',$city_id)->get();
+    $res = DB::table('tbl_delivery_charges')->select('*')->where('city_id',$city_id)->get();
     return $res;
 
  }

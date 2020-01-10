@@ -76,7 +76,6 @@ class ItemController extends Controller
         'item_name'=>$request->item_name,
         'item_price'=>$request->item_price,
         'secial_price'=>$request->special_price,
-        'item_code'=>'123456',
         'description'=>$request->item_description,
         'stock'=>$request->stock,
         'double_the_quantity_price'=>$request->double_qty_price,

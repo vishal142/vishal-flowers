@@ -19,9 +19,9 @@ public function up()
                 $table->string('payment_id')->nullable();
                 $table->string('txn_id')->nullable();
                 $table->string('currency_code')->nullable();
-                $table->bigInteger('oder_no');
+                $table->string('oder_no');
                 $table->string('invoice_no');
-                $table->Integer('user_id');
+                $table->Integer('user_id')->comment('Whoes User Place The Order');
                 $table->dateTime('delivery_date');
                 $table->bigInteger('city_id');
                 $table->bigInteger('delivery_charged_id')->comment('tbl_delivery_charges');

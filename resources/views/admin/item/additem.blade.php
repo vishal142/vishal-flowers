@@ -189,7 +189,7 @@
             <?php } ?>
 
 
-            <?php echo $ItemDetail->occasion_type;?>
+            <?php //echo $ItemDetail->occasion_type;?>
 
             <div class="form-group">
               <div class="col-sm-9">

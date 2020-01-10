@@ -60,3 +60,5 @@ Route::post('admin/hike/hike-price-data','HikeController@hike_price_data');
 Route::post('admin/hike/change-status','HikeController@change_status');
 
 Route::post('admin/hike/delete-hike-price','HikeController@delete_hike_price');
+Route::get('admin/order','OrderController@index');
+Route::get('admin/order-detail/{order_id}','OrderController@order_detail');

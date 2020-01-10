@@ -38,7 +38,11 @@
             <i class="fa fa-dashboard"></i> <span>Hike List</span>
           </a>
         </li>
-
+    <li class="treeview {{ (request()->segment(2) == 'order') ? 'active' : '' }}">
+          <a href="/admin/order">
+            <i class="fa fa-dashboard"></i> <span>Order List</span>
+          </a>
+    </li>
 
     </ul>
     </section>
