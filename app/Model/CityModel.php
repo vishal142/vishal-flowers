@@ -14,7 +14,7 @@ class CityModel extends Model
 
 
     public function GetAllCity(){
-    	$res = DB::table('tbl_city')->select('*')->get();
+    	$res = DB::table('tbl_city')->select('*')->orderBy('id','DESC')->get();
     	return $res;
     }
 

@@ -35,8 +35,7 @@ class SubCategoryController extends Controller
     		$data['page_title'] = 'Edit Sub Category';
     		$data['breadcrumb'] = '<li><i class="ace-icon fa fa-home home-icon"></i><a href="/admin/dashboard">Home</a></li><li><a href="/admin/sub-category">Sub Category List</a></li><li class="active">Edit Sub Category</li>';
     		$data['SubCategoryDetail'] = $this->SubCategoryModel->GetSubCategoryDetail($id)[0];
-    		print_r($data['SubCategoryDetail']);
-
+    		
     	}else{
     		$data['page_title'] = 'Add Sub Category';
     		$data['breadcrumb'] = '<li><i class="ace-icon fa fa-home home-icon"></i><a href="/admin/dashboard">Home</a></li><li><a href="/admin/sub-category">Sub Category List</a></li><li class="active">Add Sub Category</li>';

@@ -167,11 +167,13 @@
             //$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
             //$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
             $editLink = 'admin/category/add_category/'.$row1->id;
+            $obj = (new \App\Library\helper)->perticularFlied('tbl_city','city_name',array('id'=>$row1->city_id));
+            $city_data = json_decode($obj);
         ?>
                 <tr id="tr<?php echo $row1->id; ?>">
                   <td><?php echo $i; ?></td>
                  
-                  <td><?php echo $row1->city_id; ?></td>
+                  <td><?php echo $city_data[0]->city_name;?></td>
                   <td><?php echo $row1->from_time; ?></td>
                  <td><?php echo $row1->to_time; ?></td>
                   <td><?php echo $row1->delivery_charge; ?></td>

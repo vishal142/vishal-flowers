@@ -1,5 +1,5 @@
 @extends('admin.layouts.default')
-@section('title','Category')
+@section('title','City list')
 @section('content')
 
 <?php 

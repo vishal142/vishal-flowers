@@ -27,7 +27,7 @@
 			
             </div>
 
-            <?php print_r($SubCategoryDetail->cat_id); ?>
+            <?php //print_r($SubCategoryDetail->cat_id); ?>
             
             <!-- /.box-header -->
             <!-- form start -->
