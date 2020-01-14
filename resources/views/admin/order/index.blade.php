@@ -43,6 +43,7 @@
                   <th>Receiver Name</th>
                   <th>Order Amount</th>
                   <th>Order Status</th>
+                  <th>Payment Method</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -55,10 +56,13 @@
 					foreach($recordset as $row)
 					{
 						//print_r($row);
-						//$editLink = str_replace("{{ID}}",$recordset[$i]['id'],$edit_link);
-						//$deleteLink = str_replace("{{ID}}",$recordset[$i]['id'],$delete_link);
-						//$activeLink = str_replace("{{ID}}",$recordset[$i]['id'],$active_link);
+						
 						$editLink = '/admin/hike/edit-hike-price/'.$row->id;
+						$reciverobj = (new \App\Library\helper)->perticularFlied('tbl_shipping','receiver_name',array('id'=>$row->shipping_id));
+						$ReciverName = json_decode($reciverobj);
+
+					 $cityObj = (new \App\Library\helper)->perticularFlied('tbl_city','city_name',array('id'=>$row->city_id));
+					 $cityName = json_decode($cityObj);
 				?>
 
                 <tr id="tr<?php echo $row->id;?>">
@@ -66,9 +70,33 @@
                   <td><a href="/admin/order-detail/<?php echo $row->id;?>"><?php echo $row->oder_no;?></a></td>
                   <td><?php echo $row->invoice_no;?></td>
                   <td><?php echo $row->delivery_date;?></td>
-                  <td><?php echo $row->shipping_id;?></td>
+                  <td><?php echo $ReciverName[0]->receiver_name.'<br><p style="color:red;">'.ucfirst($cityName[0]->city_name).'</p></center>';?></td>
                   <td><?php echo $row->order_amount;?></td>
-                  <td><?php echo ucfirst($row->order_status);?></td>
+                 <td><?php
+                   echo ($row->order_status =='pending'?'<b><p style="color:red;">Pending</p></b>':''); 
+                   echo ($row->order_status =='payment_due'?'<b><p style="color:red;">Payment Due</p></b>':''); 
+
+                   echo ($row->order_status =='delivered'?'<b><p style="color:blue;">Delivered</p></b>':'');
+
+                   echo ($row->order_status =='confirm'?'<b><p style="color:green;">Confirm</p></b>':'');
+
+                   echo ($row->order_status =='canceled'?'<b><p style="color:red;">Canceled</p></b>':'');
+
+                   ?></td>
+                   <td>
+                   	<?php
+                    if($row->payment_status =='not_received'){
+
+                     echo '<b><center style="color:red;">'.ucfirst($row->payment_method_name).'<br>'.ucfirst($row->payment_status =='not_received'?'Due':'').'</center></b>'; 
+                    }
+
+                    if($row->payment_status =='received'){
+
+                     echo '<b><center style="color:blue;">'.ucfirst($row->payment_method_name).'<br>'.ucfirst($row->payment_status =='received'?'Received':'').'</center></b>'; 
+                    }
+
+                    ?>
+                   </td>
                  </tr>
                 <?php
                 $i++;

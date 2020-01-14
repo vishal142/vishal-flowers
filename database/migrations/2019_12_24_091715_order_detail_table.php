@@ -17,11 +17,11 @@ class OrderDetailTable extends Migration
             Schema::create('tbl_order_detail',function(Blueprint $table){
                 $table->bigIncrements('id');
                 $table->bigInteger('order_id');
-                $table->bigInteger('category_id');
-                $table->bigInteger('sub_cat_id');
-                $table->bigInteger('item_id');
-                $table->bigInteger('city_id');
-                $table->string('item_name');
+                $table->bigInteger('category_id')->nullable();
+                $table->bigInteger('sub_cat_id')->nullable();
+                $table->bigInteger('item_id')->nullable();
+                $table->bigInteger('city_id')->nullable();
+                $table->string('item_name')->nullable();
                 $table->Integer('quantity');
                 $table->decimal('item_price',15,2);
                 $table->decimal('sub_total_amount',15,2);

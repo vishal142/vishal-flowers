@@ -16,4 +16,18 @@ class OrderModel extends Model
     	$res = DB::table('tbl_order')->select('*')->get();
     	return $res;
     }
+
+    public function GetOrderDetail($order_id){
+    	$res = DB::table('tbl_order')->select('*')->where('id',$order_id)->get();
+    	return $res;
+
+    }
+
+    public function GetReciverDetail($shipping_id){
+    	$res = DB::table('tbl_shipping')->select('*')->where('id',$shipping_id)->get();
+    	return $res;
+
+    }
+
+ ///////////////End Class///////////////
 }

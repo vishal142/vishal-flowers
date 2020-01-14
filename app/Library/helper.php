@@ -20,7 +20,7 @@ class Helper
     }
 
 
-    function perticularFlied($table,$fliedName,$where=array()){
+    static function perticularFlied($table,$fliedName,$where=array()){
     	return DB::table($table)->select($fliedName)->where($where)->get();
 	}
 
