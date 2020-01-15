@@ -29,5 +29,12 @@ class OrderModel extends Model
 
     }
 
+    public function GetAllOrderItem($order_id){
+        return $shares = DB::table('tbl_order_detail')
+         ->where('order_id', $order_id)
+        ->get();
+
+    }
+
  ///////////////End Class///////////////
 }

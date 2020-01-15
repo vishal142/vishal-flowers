@@ -275,11 +275,7 @@
 
                 </div>
 
-                <?php
-                 //$preferData = perticularFlied('tbl_delivery_charges','*',array('city_id'=>$orderDetail['city_id'],'id'=>$orderDetail['delivery_charged_id']));
-                 //$preferData[0]['from_time'].' Hrs' .'-'. $preferData[0]['to_time'].' Hrs';
-
-                 ?>
+                
 
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Preffer Delivery Time<span class="red">*</span></label>
@@ -409,49 +405,144 @@
 
         <div class="clearfix"></div>
 
-<div class="col-md-4">
-          <!-- Horizontal Form -->
-          <div class="box box-info" style="min-height: 373px;">
-            <div class="box-header with-border">
-              <h3 class="box-title">Send Mail</h3>
-            </div>
-            
+      <div class="col-md-4">
+                <!-- Horizontal Form -->
+                <div class="box box-info" style="min-height: 373px;">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Send Mail</h3>
+                  </div>
+                  
 
-            <?php //print_r($orderDetail); ?>
+                  <?php //print_r($orderDetail); ?>
+                  
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <?php  //print_r($receiverDetail['email']);?>
+                  
+                    <div class="box-body">
+                      
+                               <div class="form-group">
+                                    <a href="" class="col-sm-12 control-label" data-toggle="modal" data-target="#updateOrderModal" onclick="OrderSatatus('<?php echo ($orderDetail->id?$orderDetail->id : '');?>','<?php echo ($receiverDetail->email?$receiverDetail->email : '');?>')">Send Confirmation Mail</a>
+                                </div>
+
+                              <?php 
+                              $deliveryData = (new \App\Library\helper)->perticularFlied('tbl_delivery_charges','*',array('id'=>$orderDetail->delivery_charged_id))[0];
+
+                                $deliveryTime = $deliveryData->from_time.' Hrs' .' - '.$deliveryData->to_time.' Hrs';
+                               ?>
+
+                              <div class="form-group">
+                                    <a href="" class="col-sm-10 control-label" data-toggle="modal" data-target="#ForwardOrderModal" onclick="OrderForward('<?php echo ($orderDetail->id?$orderDetail->id : '');?>','<?php echo ($orderDetail->oder_no?$orderDetail->oder_no : '');?>','<?php echo ($deliveryTime?$deliveryTime: '');?>','<?php echo ($orderDetail->delivery_date?$orderDetail->delivery_date : '');?>')">Forward Order</a>
+                                </div>
+
+                            <?php if($orderDetail->order_status =='delivered'){
+                            }else{?>
+                            <div class="form-group">
+                                    <a href="" class="col-sm-6 control-label" data-toggle="modal" data-target="#DeliveredOrderModal" onclick="OrderDelivered('<?php echo ($orderDetail->id?$orderDetail->id: '');?>','<?php echo ($orderDetail->oder_no?$orderDetail->oder_no : '');?>','<?php echo ($deliveryTime?$deliveryTime: '');?>')">Order Deliverd</a>
+                            </div>
+                          <?php };?>
+                     </div>
+                    <!-- /.box-body -->
+                  
+                    <!-- /.box-footer -->
+                 
+                </div>
+                <!-- /.box -->
+      </div>
+
+      <div class="col-md-8 pull-right">
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Product Price Description</h3>
+            </div>
+            <div class="box-body">
+             <?php 
+
+             $orderDetailData = (new \App\Library\helper)->perticularFlied('tbl_order_detail','*',array('order_id'=>$orderDetail->id));
+             //print_r($orderDetailData);
+             ?>
             
             <!-- /.box-header -->
             <!-- form start -->
-            <?php  //print_r($receiverDetail['email']);?>
-            
-              <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>SL #</th>
+                  <th>Image</th>
+                  <th>Name of product / Services</th>
+                  <th>Quantity</th>
+                  <th>Item Price</th>
+                  <th>Taxable Value/Sub Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  if($orderDetailData)
+                  {
+                  
+                  //print_r($orderDetailData);
+                  $startRecord ='0';
+                  $total = '0';
+                  $i = '1';
+                  foreach($orderDetailData as $row)
+                  {
+                  $total += $row->sub_total_amount;
+
+
+                  
+
+                  ?>
+                  <tr id="tr<?php echo $row->id;?>">
+                  <td><?php echo $i; ?></td>
+                  <?php if($row->item_id !='0'){
+                    $item_name = (new \App\Library\helper)->perticularFlied('tbl_item',array('item_image'),array('id'=>$row->item_id));
+                   ?>
+                    <td><img src="{{ URL::to('/uploads/item_image/'.$item_name[0]->item_image)}}" width="100" height="80"></td>
+
+                   <?php }else{ ?>
+                    <td></td>
+
+                   <?php } ?>
+                  
+
+                  <td><?php echo ucfirst($row->item_name);?></td>
+                  <td><?php echo $row->quantity; ?></td>
+                  <td><?php echo $row->item_price; ?></td>
+                  <td><?php echo $row->sub_total_amount; ?></td>
+                  </tr>
+                  <?php
+                  $i++;
+                  }?>
+
+                  <tr>
+                  <td>Total</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><?php echo number_format($total,2); ?></td>
+
+                  </tr>
+
+
+                  <?php }
+                  else
+                  {
+                  ?>
+                  <tr>
+                  <td colspan="8">No Records Found</td>
+                  </tr>
+                  <?php } ?>
+                  </tbody>
+            </table>
+               
                 
-                         <div class="form-group">
-                              <a href="" class="col-sm-12 control-label" data-toggle="modal" data-target="#updateOrderModal" onclick="OrderSatatus('<?php echo ($orderDetail->id?$orderDetail->id : '');?>','<?php echo ($receiverDetail->email?$receiverDetail->email : '');?>')">Send Confirmation Mail</a>
-                          </div>
-
-                        <?php 
-                        $deliveryData = (new \App\Library\helper)->perticularFlied('tbl_delivery_charges','*',array('id'=>$orderDetail->delivery_charged_id))[0];
-
-                          $deliveryTime = $deliveryData->from_time.' Hrs' .' - '.$deliveryData->to_time.' Hrs';
-                         ?>
-
-                        <div class="form-group">
-                              <a href="" class="col-sm-10 control-label" data-toggle="modal" data-target="#ForwardOrderModal" onclick="OrderForward('<?php echo ($orderDetail->id?$orderDetail->id : '');?>','<?php echo ($orderDetail->oder_no?$orderDetail->oder_no : '');?>','<?php echo ($deliveryTime?$deliveryTime: '');?>','<?php echo ($orderDetail->delivery_date?$orderDetail->delivery_date : '');?>')">Forward Order</a>
-                          </div>
-
-                      <?php if($orderDetail->order_status =='delivered'){
-                      }else{?>
-                      <div class="form-group">
-                              <a href="" class="col-sm-6 control-label" data-toggle="modal" data-target="#DeliveredOrderModal" onclick="OrderDelivered('<?php echo ($orderDetail->id?$orderDetail->id: '');?>','<?php echo ($orderDetail->oder_no?$orderDetail->oder_no : '');?>','<?php echo ($deliveryTime?$deliveryTime: '');?>')">Order Deliverd</a>
-                      </div>
-                    <?php };?>
-               </div>
+              </div>
               <!-- /.box-body -->
             
               <!-- /.box-footer -->
-           
-          </div>
-          <!-- /.box -->
+            </div>
         </div>
 
         
@@ -588,11 +679,11 @@ function chk_categoery(val){
 function OrderSatatus(val,receiver_email){
     $.ajax({
       type:'POST',
-      url:'/admin/order/email_tamplate',
+      url:'/admin/order/email-tamplate',
       data:{'order_id':val},
       //dataType: "json",
       success: function(data){
-        $("#email_tamplete").html(data);
+        $("#email_tamplete").html(data.html);
         $('#receiver_email').val(receiver_email);
       }
   });
