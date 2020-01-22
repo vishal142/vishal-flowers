@@ -16,6 +16,7 @@
     <table class="table">
       <thead>
         <th>SL No </th>
+        <th>Image</th>
         <th>Product Description</th>
         <th>Qty</th>
         <th>Unit Price</th> 
@@ -38,12 +39,14 @@
             ?>
             <tr id="tr<?php echo $row->id; ?>">
                   <td><?php echo $i; ?></td>
+                  <td>
+                    <?php if($item_name->item_image !=''){ ?>
+                    <a href="/admin/item/edit-item/<?php echo $item_name->id;?>" title="Item-Detail" target="_blank">
+                    <img src="{{ URL::to('/uploads/item_image/'.$item_name->item_image)}}" width="100" height="80"></a>
+                  <?php } ?>
+                  </td>
 
-                  <td><?php if($item_name->item_image !=''):?>
-                  <a href="" target="_blank">
-                  <img src="">
-                  </a>
-                  <?php endif;?>
+                  <td>
                   <?php echo($item_name->item_name==''?ucfirst($row->item_name):$item_name->item_name); ?>
                   </td>
                   <td><?php echo $row->quantity; ?></td>
@@ -56,6 +59,7 @@
 
       <tr>
                   <td>Total</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>

@@ -37,7 +37,7 @@
           foreach($orderDetailData as $row)
           {
 
-            $item_data = (new \App\Library\helper)->perticularFlied('tbl_item','item_image',array('id'=>$row->item_id))[0];
+            $item_data = (new \App\Library\helper)->perticularFlied('tbl_item',array('item_image','id'),array('id'=>$row->item_id))[0];
             //dd($item_data->item_image);
 
             if($row->category_id!=''){
@@ -50,9 +50,9 @@
         <tr>
 
           <td style="text-align: center;">
-            
-          <img src="{{ URL::to('/uploads/item_image/') }}" height="60" width="80">
-           <!-- <img src="http://localhost/saesha_flower/img.php?img=item_image/1_1505197156_432.jpg&amp;mode=cm&amp;w=60&amp;h=60" alt="Photo"> -->
+           <a href="/admin/item/edit-item/<?php echo $item_data->id;?>" title="Item-Detail" target="_blank"> 
+              <img src="{{ URL::to('/uploads/item_image/'.$item_data->item_image)}}" width="100" height="80">
+           </a>
 
           </td>
 
