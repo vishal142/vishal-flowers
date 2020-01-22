@@ -583,7 +583,7 @@
               </div>
 
               
-              <input type="hidden" name="order_id" value="">
+              <input type="hidden" name="order_id" value="{{Request::segment(3)}}">
               
 
               <div class="box-footer">
@@ -593,8 +593,8 @@
               </div>
             <div id="email_tamplete"></div>
 
-      </div>
-    </form>
+        </div>
+        </form>
           
 
 
@@ -602,7 +602,8 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-      </div>
+  </div>
+  <!---End Model -->
       
     </div>
   </div>
@@ -690,13 +691,14 @@ function OrderSatatus(val,receiver_email){
 }
 
 function OrderForward(val,order_no,delivery_time,delivery_date){
+
   $.ajax({
       type:'POST',
-      url:'/admin/order/order_forward',
+      url:'/admin/order/order-forward',
       data:{'order_id':val},
       //dataType: "json",
       success: function(data){
-        $("#forward_order").html(data);
+        $("#forward_order").html(data.html);
         $('#forward_order_number').html(order_no);
         $('#forword_email_subject').val('Order from Expressssions - Order no '+order_no);
         $('#delivery_date').val(delivery_date);

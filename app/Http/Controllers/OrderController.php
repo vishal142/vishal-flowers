@@ -46,9 +46,18 @@ class OrderController extends Controller
     }
 
     function email_tamplate(Request $request){
+        $OrderData = Helpers::perticularFlied('tbl_order_detail','*',array('order_id'=>$request->order_id));
+        //dd($OrderData);
+        $view = view('admin.email.order_confirm',['orderDetailData'=>$OrderData,'order_id'=>$request->order_id])->render();
+           
+       return response()->json(['html'=>$view]);
+
+    }
+
+     function order_forward(Request $request){
         $OrderData = Helpers::perticularFlied('tbl_order','*',array('id'=>$request->order_id));
         //dd($OrderData);
-        $view = view('admin.email.forward_order',['OrderData'=>$OrderData[0]])->render();
+        $view = view('admin.email.forward_order',['OrderData'=>$OrderData[0],'order_id'=>$request->order_id])->render();
            
        return response()->json(['html'=>$view]);
 

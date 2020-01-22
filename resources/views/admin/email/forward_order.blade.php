@@ -8,8 +8,7 @@
 <div style="background-color:#ffffff">
 <div style="margin: 0 auto; padding: 30px 15px; width: 70%;">
     <h3>
-    
-
+      Dear (--Vendor Name --),
     </h3>
      
     <h3>Please process the Order no <?php echo $OrderData->oder_no;?></h3><br>
@@ -52,7 +51,7 @@
 
           <td style="text-align: center;">
             
-          <img src="{{ URL::to('/uploads/item_image/'.) }}" height="60" width="80">
+          <img src="{{ URL::to('/uploads/item_image/') }}" height="60" width="80">
            <!-- <img src="http://localhost/saesha_flower/img.php?img=item_image/1_1505197156_432.jpg&amp;mode=cm&amp;w=60&amp;h=60" alt="Photo"> -->
 
           </td>
@@ -83,12 +82,27 @@
 
    <hr>
    <?php 
-   $odeder_data = (new \App\Library\helper)->perticularFlied('tbl_order','*',array('id'=>1))[0];
+   $odeder_data = (new \App\Library\helper)->perticularFlied('tbl_order','*',array('id'=>$order_id))[0];
    $shipping_data = (new \App\Library\helper)->perticularFlied('tbl_shipping','*',array('id'=>$odeder_data->shipping_id))[0];
+
+   $delivery_time = (new \App\Library\helper)->perticularFlied('tbl_delivery_charges','*',array('id'=>$odeder_data->delivery_charged_id))[0];
 
    ?>
    <h3>Delivery Information</h3>
    Recipient Name :&nbsp;<?php echo $shipping_data->receiver_name;?><br>
+   Date Ordered :&nbsp; <?php echo date('d-m-Y H:i:s',strtotime($odeder_data->order_date_time));?><br>
+   Delivery Date:&nbsp;<?php echo date('d-m-Y',strtotime($odeder_data->delivery_date));?><br>
+      Delivety Time :<?php echo $delivery_time->from_time .'-'.$delivery_time->to_time;?><br>
+      Delivery Adderss: <?php echo $shipping_data->receiver_address;?><br>
+      Email: <?php echo $shipping_data->email;?><br>
+      Mob: <?php echo $shipping_data->receiver_mobile;?><br>
+    <h3>Delivery address :</h3>
+    <?php echo $shipping_data->receiver_address;?>
+    <h3>Git Message</h3>
+      <?php echo $shipping_data->message_on_card;?> <br>
+
+      Signature :<?php echo $shipping_data->signature;?><br>
+
    <hr>
   With Regards,<br>
   Team Saesha Flower

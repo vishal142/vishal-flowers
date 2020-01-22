@@ -64,3 +64,4 @@ Route::get('admin/order','OrderController@index');
 Route::get('admin/order-detail/{order_id}','OrderController@order_detail');
 
 Route::post('admin/order/email-tamplate','OrderController@email_tamplate');
+Route::post('admin/order/order-forward','OrderController@order_forward');
