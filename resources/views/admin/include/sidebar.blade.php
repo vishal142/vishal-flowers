@@ -44,6 +44,13 @@
           </a>
     </li>
 
+    <li class="treeview {{ (request()->segment(2) == 'coupon') ? 'active' : '' }}">
+          <a href="/admin/coupon">
+            <i class="fa fa-dashboard"></i> <span>Coupon List</span>
+          </a>
+    </li>
+
+
     </ul>
     </section>
     <!-- /.sidebar -->

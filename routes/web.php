@@ -65,3 +65,9 @@ Route::get('admin/order-detail/{order_id}','OrderController@order_detail');
 
 Route::post('admin/order/email-tamplate','OrderController@email_tamplate');
 Route::post('admin/order/order-forward','OrderController@order_forward');
+Route::get('admin/coupon','CouponController@index');
+Route::get('admin/coupon/add-coupon','CouponController@add_coupon');
+Route::get('admin/coupon/edit-coupon/{coupon_id}','CouponController@add_coupon');
+Route::post('admin/coupon/change-status','CouponController@change_status');
+Route::post('admin/coupon/add-coupon-data','CouponController@add_coupon_data');
+Route::post('admin/coupon/delete-coupon','CouponController@delete_coupon');
