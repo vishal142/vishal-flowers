@@ -93,7 +93,5 @@ class CouponController extends Controller
     public function delete_coupon(Request $request){
     	$this->CouponModel->DeleteCoupon($request->id);
     	echo true;
-    	
-
     }
 }

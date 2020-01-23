@@ -50,6 +50,12 @@
           </a>
     </li>
 
+    <li class="treeview {{ (request()->segment(2) == 'card') ? 'active' : '' }}">
+          <a href="/admin/card">
+            <i class="fa fa-dashboard"></i> <span>Manage Card Message</span>
+          </a>
+    </li>
+
 
     </ul>
     </section>

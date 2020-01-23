@@ -71,3 +71,11 @@ Route::get('admin/coupon/edit-coupon/{coupon_id}','CouponController@add_coupon')
 Route::post('admin/coupon/change-status','CouponController@change_status');
 Route::post('admin/coupon/add-coupon-data','CouponController@add_coupon_data');
 Route::post('admin/coupon/delete-coupon','CouponController@delete_coupon');
+
+Route::get('admin/card','CardController@index');
+Route::get('admin/card/add-card-message','CardController@add_card_message');
+Route::get('admin/card/edit-card-message/{card_id}','CardController@add_card_message');
+
+Route::post('admin/card/add-card-data','CardController@add_card_data');
+Route::post('admin/card/delete-card-message','CardController@delete_card_message');
+Route::post('admin/card/change-status','CardController@change_status');
