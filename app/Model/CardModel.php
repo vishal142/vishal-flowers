@@ -12,7 +12,7 @@ class CardModel extends Model
     protected $table = 'tbl_card_message';
 
     public function GetAllCardMessage(){
-    	return DB::table('tbl_card_message')->select('*')->get();
+    	return DB::table('tbl_card_message')->select('*')->orderBy('id', 'desc')->get();
     }
 
     public function CardDetail($id){
