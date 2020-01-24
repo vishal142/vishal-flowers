@@ -79,3 +79,11 @@ Route::get('admin/card/edit-card-message/{card_id}','CardController@add_card_mes
 Route::post('admin/card/add-card-data','CardController@add_card_data');
 Route::post('admin/card/delete-card-message','CardController@delete_card_message');
 Route::post('admin/card/change-status','CardController@change_status');
+
+Route::get('admin/addon','AddonController@index');
+Route::get('admin/addon/add-addon-item','AddonController@add_addon_item');
+Route::get('admin/addon/edit-addon-item/{addon_id}','AddonController@add_addon_item');
+
+Route::post('admin/addon/add-addon-data','AddonController@add_addon_data');
+Route::post('admin/addon/change-status','AddonController@change_status');
+Route::post('admin/addon/delete-add-on-item','AddonController@delete_add_on_item');

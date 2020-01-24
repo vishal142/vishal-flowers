@@ -56,6 +56,12 @@
           </a>
     </li>
 
+    <li class="treeview {{ (request()->segment(2) == 'addon') ? 'active' : '' }}">
+          <a href="/admin/addon">
+            <i class="fa fa-dashboard"></i> <span>Manage Add-on List</span>
+          </a>
+    </li>
+
 
     </ul>
     </section>

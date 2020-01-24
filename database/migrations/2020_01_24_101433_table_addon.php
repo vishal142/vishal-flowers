@@ -18,7 +18,7 @@ class TableAddon extends Migration
                 $table->bigIncrements('id');
                 $table->string('addon_name');
                 $table->double('addon_price',15,2);
-                $table->string('image');
+                $table->string('image')->nullable();
                 $table->enum('status',['Active','Inactive'])->default('Active');
                 $table->timestamps();
                 $table->chrset = 'utf8';
