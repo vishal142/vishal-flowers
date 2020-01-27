@@ -87,3 +87,11 @@ Route::get('admin/addon/edit-addon-item/{addon_id}','AddonController@add_addon_i
 Route::post('admin/addon/add-addon-data','AddonController@add_addon_data');
 Route::post('admin/addon/change-status','AddonController@change_status');
 Route::post('admin/addon/delete-add-on-item','AddonController@delete_add_on_item');
+
+Route::get('admin/slider','SliderController@index');
+Route::get('admin/slider/add-slider','SliderController@add_slider');
+Route::get('admin/slider/edit-slider/{slider_id}','SliderController@add_slider');
+Route::post('admin/slider/add-slider-data','SliderController@add_slider_data');
+
+Route::post('admin/slider/change-status','SliderController@change_status');
+Route::post('admin/slider/delete-slider','SliderController@delete_slider');

@@ -114,9 +114,9 @@ class AddonController extends Controller
    		unlink($image_url);
     	$this->AddonModel->DeleteAddonItem($request->id);
     	echo true;
-
-
     }
+
+    
 
 
 }

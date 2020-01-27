@@ -9,6 +9,13 @@
           </a>
         </li>
 
+        <li class="treeview {{ (request()->segment(2) == 'slider') ? 'active' : '' }}">
+          <a href="/admin/slider">
+            <i class="fa fa-dashboard"></i> <span>Slider List</span>
+          </a>
+        </li>
+
+
         <li class="treeview {{ (request()->segment(2) == 'category') ? 'active' : '' }}">
           <a href="/admin/category">
             <i class="fa fa-dashboard"></i> <span>Category</span>
