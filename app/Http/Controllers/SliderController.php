@@ -100,7 +100,7 @@ class SliderController extends Controller
     	$status = $this->SliderModel->SliderDetail($request->id)[0];
     	$image_url = public_path('uploads/slider/'.$status->image);
     	unlink($image_url);
-    	//$this->SliderModel->DeleteSlider($request->id);
+    	$this->SliderModel->DeleteSlider($request->id);
     	echo true;
 
 
