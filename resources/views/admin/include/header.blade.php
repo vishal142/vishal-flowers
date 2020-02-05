@@ -2,7 +2,7 @@
 <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo" target="_blank" title="Go To Home">
+    <a href="/" class="logo" target="_blank" title="Go To Home">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- <span class="logo-mini"><img src="<?php //echo $this->config->item('css_images_js_base_url');?>img/logo3.png" alt="" /></span> -->
       <!-- logo for regular state and mobile devices -->

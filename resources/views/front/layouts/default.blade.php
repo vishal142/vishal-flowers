@@ -1,0 +1,5 @@
+@include('front.include.head')
+@include('front.include.header')
+@include('front.include.header-bottom')
+@yield('content')
+@include('front.include.footer')

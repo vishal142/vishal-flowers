@@ -17,6 +17,7 @@ class AdminData extends Migration
     public function up()
     {
         $data = array(
+            'name'=>'Vishal Gupta',
             'email'=>'admin@gmail.com',
             'password'=>'123456',
             'first_name'=>'Vishal',
