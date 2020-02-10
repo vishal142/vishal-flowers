@@ -1,0 +1,227 @@
+body{
+	background-color:#f6f6f6 !important;
+}
+.category_description,.category_promo{
+	width: 100%;
+	margin-top:20px;
+}
+.categorydescription p {
+	font-family: 'Roboto', sans-serif;
+	color: #666;
+	font-size: 15px;
+	line-height: 22px;
+	margin:0;
+}
+.category_promo ul{
+	width:100%;
+	margin:0;
+	padding:0;
+	line-height: 0.5;
+}
+.top_banners li {
+	display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    transition: all ease-in-out 0.25s;
+    cursor: pointer;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+ .top_banners li a {
+	 box-shadow: none !important;
+	 border: none !important;
+	 background: none;
+}
+.tiles li a img, .tiles li img {
+	display: block;
+	width: 100%;
+	position: relative;
+	z-index: 9;
+}
+.tiles li {
+	float: left;
+	width: 24.25%;
+	margin-bottom: 10px;
+	position: relative;
+	margin-right:1%;
+}
+.tiles li:nth-child(4n+4) {
+    float: right;
+    margin-right: 0;
+}
+#categorybanner{
+	padding:0 35px;
+}
+.plp_heading {
+    font-family: 'Roboto',sans-serif;
+    color:#de3252;
+    font-size:26px;
+    letter-spacing: 0.15px;
+    margin-top:0px;
+    margin-bottom:0px;
+    line-height: 1.4;
+    font-weight: normal;
+}
+.plp_heading::before {
+    width: 0px;
+    top: 213px;
+    right: 160px;
+    background: url(style.css);
+}
+.plp_heading::after {
+    width: 0px;
+    top: 213px;
+    right: 160px;
+    background: url(style.css);
+}
+.quickLinks {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.quickLinks .button {
+    transition: all ease-in-out 0.25s;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline;
+    font-size: 14px !important;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    padding: 12px 12px;
+    font-weight: 400 !important;
+    min-width:80px;
+    float: left;
+    width: auto;
+    line-height: 1;
+}
+
+.quickLinks .button:hover {
+    box-shadow: 0 3px 4px rgba(0,0,0,0.5);
+}
+.quickLinks .chocolate {
+    background-color: #6f270f;
+}
+.quickLinks .brown {
+    background-color: #b81516;
+}
+.quickLinks .yellow {
+    background-color: #f7a513;
+}
+.quickLinks .orange {
+    background-color: #ef8106;
+}
+.quickLinks .red {
+    background-color: #e53333;
+}
+.quickLinks .green1 {
+    background-color: #8e860a;
+}
+.quickLinks .green2 {
+    background-color: #38a93f;
+}
+.quickLinks .blue1 {
+    background-color: #5861da;
+}
+.quickLinks .blue2 {
+    background-color: #1e9383;
+}
+.quickLinks .blue3 {
+    background-color: #0ea2a6;
+}
+.quickLinks .pink {
+    background-color: #e03873;
+}
+.quickLinks .purple {
+    background-color: #90216e;
+}
+.quickLinks .button a{
+	color:#fff;
+}
+/*------------------------------Reviews Section In PLP---------------------*/
+.category-review-summary {
+    margin-top: 10px;
+}
+.category-review-summary .ratings-count span {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+.category-review-summary .ratings-count {
+    color: #feb614;
+    font-size: 14px;
+    display: inline-block;
+}
+.category-review-summary .stars-70:after {
+    width: 70%;
+}
+.category-review-summary .stars-container:after {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    left: 0;
+    content: '\2605\2605\2605\2605\2605';
+    color: #feb614;
+    overflow: hidden;
+}
+#show-category-reviews-carosel span {
+    padding: 3px;
+    color: #2179d0;
+}
+.category-review-summary .reviews-count {
+    color: #2179d0;
+    font-size: 14px;
+    display: inline-block;
+}
+#show-category-reviews-carosel span {
+    padding: 3px;
+    color: #2179d0;
+}
+.category-review-summary .stars-container:after {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    left: 0;
+    content: '\2605\2605\2605\2605\2605';
+    color: #feb614;
+    overflow: hidden;
+}
+.stars-container:after {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    left: 0;
+    content: '\2605\2605\2605\2605\2605';
+    color: #feb614;
+    overflow: hidden;
+    height: 20px;
+}
+/*---------------------------navigation home > category type and Sort By in PLP--------*/
+.navigation>div {
+    display: inline-block;
+}
+.leftnav {
+    float: right;
+    height: auto;
+}
+.leftnav.ui-front > label {
+    margin-right: 5px !important;
+}
+.leftnav>label {
+    display: inline-block;
+}
+.leftnav.ui-front > #sort {
+    width: 180px;
+    height: 35px;
+}
+.leftnav.ui-front > select {
+    padding: 0 0 0 0.5rem !important;
+}
+.navigation {
+    margin-top: 22px;
+}

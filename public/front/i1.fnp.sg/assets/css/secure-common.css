@@ -1,0 +1,784 @@
+/*------------------------------------*\
+            Https Page Styling
+\*------------------------------------*/
+h4 {
+    margin-top: 0;
+    color: #42c2dc;
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 1rem;
+    font-family: "Roboto";
+    font-weight: 200;
+}
+
+.deliveryaddrfrm .profilesel{
+    border-color:#42c2dc;
+}
+
+
+.profilesel/*, .profilesel:hover*/{
+    border-color:#42c2dc;
+}
+
+.myprofile {
+    border-color:#a7a8a8; /*#42c2dc;*/
+    margin-top: 1.05rem;
+/*  max-width: 325px;*/ /*delivery address width*/
+    position: relative;
+    min-height:125px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.myprofile tbody tr:last-child td .udate{
+    margin-bottom: 25px;
+}
+
+.myprofile thead {
+    background: none;
+    border: none;
+    position: relative;
+}
+
+#addressbookscroll {
+    height: 500px;
+}
+
+#addressbookscroll .jspPane>div{
+    padding-left: 0;
+}
+
+
+.icon {
+    position: absolute;
+/*
+    width: 18px;
+    height: 18px;
+*/
+}
+
+.edit {
+    top: 8px;
+    right: 8px;
+}
+
+.delete {
+    right: 30px;
+    top: 8px;
+}
+
+.myprofile tbody {
+    margin-bottom: 1.1rem;
+}
+
+.myprofile thead th, .myprofile tbody td {
+    padding: 0;
+    border: none;
+}
+
+.myprofile label {
+	font-weight: 300;
+    color: #222;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.myprofile span {
+	width: 77%;
+	margin-left: 30px;
+    margin-right: auto;
+    display: block;
+	font-size: 15px;
+    color: #222;
+	font-weight: 300;
+    margin-bottom: 3px;
+}
+
+.remindset{
+    margin-top: 50px;
+}
+
+.myprofile thead span {
+    text-align: left;
+    vertical-align: bottom;
+    padding-top: 10px;
+	padding-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight:bold;
+    border-bottom: 0.1rem solid #E4E4E4;
+    margin-bottom: 5px;
+    color: #5c5c5c;
+    word-break: break-all;
+}
+
+
+.cartinfo .imgupload, .orderaddress .imgupload{
+    margin-right: 0px;
+    border: 1px solid #eff0f1;
+    margin-left: 0.5rem;
+}
+
+.orderaddress .personalizedelivery .imgupload{
+    margin-left: 0px;
+    max-width:85px;
+    cursor: default;
+    height: 72px;
+}
+
+.orderaddress .personalizedelivery{
+    margin: 0;
+}
+
+.orderaddress .personalizedelivery span{
+    color: #59b5d7;
+    margin-bottom: 5px;
+}
+
+.hide{
+       display: none;
+}
+
+.cartinfo .giftaddons .personalizedelivery .personalmsg{
+    padding-right: 20px;
+}
+
+.cartinfo .giftaddons .personalizedelivery .personalmsg textarea, .orderaddress .personalizedelivery textarea{
+    background-color: #fff;
+}
+
+.cartinfo .giftaddons .personalizedelivery .personalmsg textarea:focus, .orderaddress .personalizedelivery textarea, .orderaddress .personalizedelivery textarea:focus{
+    border: 1px solid rgb(239, 240, 241) !important;
+    box-shadow: none;
+}
+
+.cartinfo textarea{
+    border: 1px solid rgb(239, 240, 241);
+    box-shadow: none;
+}
+
+.myprofile tbody span.uname {
+    text-align: left;
+    vertical-align: bottom;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    font-size: 1.2rem;
+    border-bottom: 0.1rem solid #E4E4E4;
+    margin-bottom: 5px;
+    color: #5c5c5c;
+}
+
+.myprofile tbody span{
+    word-break: break-all;
+}
+
+#myaccountlink{
+    position: fixed;
+    max-width: 310px;
+}
+
+.myprofile tbody span.uname a{
+    color: #42c2dc;
+}
+
+.myaccount th{
+    white-space: nowrap;
+}
+
+.myaccount {
+    border-color: #dedede;
+    color: #9A9A9A;
+/*    position: fixed;*/
+}
+
+.myaccount thead th, .myaccount tbody td {
+    text-align: left;
+    line-height: 1.7rem;
+}
+
+.myaccount a {
+    color: #222;
+	font-size: 1.3rem;
+    text-align: left;
+    text-transform: capitalize;
+    padding-left: 0.5rem;
+    vertical-align: top;
+	font-weight:300;
+}
+
+ .myaccount tr td input[type="text"]:focus, td input[type="date"]:focus, td input[type="time"]:focus, td input[type="email"]:focus,td input[type="number"]:focus,.myaccount tr td input[type="password"]:focus{
+     border-color: #2273b4;
+     min-height: 0;
+     box-shadow: none;
+}
+
+.telnumber input:nth-child(1){
+    width:12%;
+    display: inline;
+}
+
+.telnumber input:nth-child(2){
+    width:88%; /*85%*/
+    display: inline;
+}
+
+ .myaccount tr td input[type="text"]:focus, td input[type="date"]:focus, td input[type="time"]:focus, td input[type="email"]:focus,td input[type="number"]:focus,.myaccount tr td input[type="password"]:focus{
+     border-color: #2273b4;
+     min-height: 0;
+     box-shadow: none;
+}
+
+.telnumber input:nth-child(1){
+    width:20%;
+    display: inline;
+    text-align: center;
+    background: #fff;
+}
+.telnumber .inputdiv input[type="tel"]{
+    width: 75%;
+    margin-left : -2px;
+}
+
+.telnumber .inputdiv input:nth-child(2), .telnumber .inputdiv input:nth-child(2):focus{
+    width:80%; /*85%*/
+    display: inline;
+   box-shadow: -5px 4px 0 -4px #878787;
+}
+
+.myorder .recipintname{
+    word-break: break-all;
+}
+
+.myaccount thead a {
+    /*myaccount link*/
+    font-size: 1.6em;
+    font-weight: 300;
+	color: #7ac4df;
+}
+
+.myaccount a.active {
+    text-decoration: underline;
+    color: #42c2dc;
+    pointer-events: none;
+    cursor: default;
+}
+
+input.button/*, input.button:HOVER*/{
+    border: 1px solid #a3a5a6;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-weight: 100;
+    padding: 0.4em;
+    cursor: pointer;
+    width: 100%;
+    color: #606262;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+
+.form-grid input.update{
+    border-radius: 0;
+    border: 1px solid #a3a5a6;
+    text-transform: uppercase;
+    font-weight: 100;
+    width: 100%;
+    font-size: 19px;
+    line-height: 40px;
+    border-color: #f97d00;
+}
+
+
+input.buttons:hover, input.buttons:focus{
+    background-color: #fff;
+    color: #606262;
+}
+
+
+.accountfrm input[type="submit"].save, input[type="submit"].add{
+    border-radius: 0;
+	font-family: "Arial";
+    font-weight: 400;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+
+.accountfrm input.save{
+    color: #fff;
+    padding: 10px 0;
+    background-color: #f97d00;
+}
+
+#termsncondition .scroll-pane{
+    height: 428px !important;
+}
+#termsncondition .tnccontent.scroll-pane>ul{
+    height: 325px;
+}
+
+input.add, input.add:HOVER {
+    color: #fff;
+    border-color:  #f97d00;
+    background-color: #f97d00;
+    text-transform: none;
+}
+
+.review h4, .myorder h4 {
+    margin-bottom: 1rem;
+}
+
+.review td, .review th, .myorder td, .myorder th, .myorder tbody a {
+/*	font-size: 1rem;*/
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.review tbody tr td img {
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+}
+
+.review thead th, .myorder thead th {
+	color: #333333;
+	font-weight: 500;  /*Bold for Redemption Head*/
+    font-size: 1em;
+    line-height: 1rem;
+}
+
+.review tbody td{
+    line-height: 0.75rem;
+}
+.review tbody td, .myorder tbody td {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    vertical-align: middle;
+    color: #757575;
+    line-height: 2.8rem;  /*Account Table Body Cell Height*/
+}
+
+.profile-edit {
+    border: none;
+    margin-top: 2.5rem;
+}
+
+.myaccount input {
+    height: 0.965rem;
+}
+
+.profile-edit td {
+    border: none;
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+}
+
+.profile-edit input::-webkit-input-placeholder{
+    word-wrap: break-word;
+}
+.profile-edit input[type='tel'],.profile-edit input[type='tel']:focus, .accountfrm input[type='tel'],.accountfrm input[type='tel']:focus{
+	 box-shadow: -5px 4px 0px -4px #878787 !important;
+}
+.profile-edit input, .profile-edit textarea, .profile-edit textarea:focus, input.changepswd{
+    color: #353737;
+    height: auto;
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 15px;
+    border: 0 solid #c2c2c2;
+    border-bottom-width: 1px;
+    min-height: 0;
+    box-shadow: none;
+    display: inline;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+
+input.changepswd{
+    margin-bottom: 0;
+}
+.myaccount.profile-edit input[type="email"]{
+    text-transform: none;
+}
+
+span.error {
+    position: absolute;
+    right: -75%;
+    top: 1px;
+    background-color: #db3638;
+    color: #fefefe;
+    font-size: 0.85rem;
+    padding: 0.85rem 1.75rem;
+    width: auto;
+    font-style: normal;
+}
+
+span.error:before {
+    content: '\25c4';
+    position: absolute;
+    left: -10px;
+    color: #db3638;
+    top: 17%;
+}
+
+.has-error {
+    background-image:
+        url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M23.9%204.097c-2.645-2.642-6.155-4.097-9.897-4.097-3.745%200-7.257%201.455-9.9%204.097-2.646%202.638-4.102%206.149-4.102%209.884%200%203.736%201.456%207.244%204.102%209.888%202.644%202.639%206.155%204.1%209.9%204.1%203.742%200%207.251-1.461%209.897-4.1%202.644-2.644%204.1-6.151%204.1-9.888%200-3.735-1.456-7.247-4.1-9.884zm-9.937.835c1.101%200%201.988.854%201.988%201.907%200%201.055-.887%201.909-1.988%201.909-1.102%200-1.989-.854-1.989-1.909%200-1.054.888-1.907%201.989-1.907zm4.065%2016.506c-.185.193-.446.284-.786.284h-6.502c-.345%200-.603-.091-.777-.284-.177-.191-.262-.441-.262-.746%200-.307.085-.56.262-.757.174-.2.416-.3.726-.3h1.288v-6.939h-1.237c-.345%200-.603-.096-.777-.289-.177-.191-.262-.438-.262-.744s.085-.558.262-.76c.174-.196.416-.297.726-.297h3.358c.235%200%20.418.063.575.154.287.084.548.208.76.41.364.345.541.838.541%201.478v6.987h1.319c.35%200%20.612.1.791.3.179.197.268.45.268.757%200%20.305-.091.555-.273.746z%22%2F%3E%3C%2Fsvg%3E');
+    background-color: #db3638;
+}
+
+.amount {
+    text-align: right !important;
+}
+
+.pickdate {
+    background: url(../images/calendar.jpg) right no-repeat;
+    cursor: pointer;
+}
+
+.myaccount input[type="text"]:focus,.myaccount input[type="password"]:focus {
+    border-color: #c2c2c2;
+}
+
+.profile-edit input.pickdate[type="text"]:focus {
+    background: url(../images/calendar.jpg) right no-repeat !important;
+}
+
+.myorder tbody .orderserialno{
+    color: #2f5494;
+/*  display: block;*/
+    font-weight: 100;
+    text-align: left;
+/*  padding-left: 0;*/
+}
+
+table a {
+    text-decoration: none;
+}
+
+.contentwrapper {
+    max-width: 100em;
+    min-width:64em;
+    padding-bottom: 5rem;
+}
+.checkcontentwrapper{
+    padding-top: 25px; /*Delivery Address*/
+    max-width: 100em;
+    min-width: 64em;
+}
+
+.myaccount tfoot tr td{
+    font-weight: normal;
+        color: #757575;
+    font-weight: 100;
+}
+.myaccount tr, .myprofile tr {
+    background: none !important;
+}
+
+.myorder tr:nth-of-type(even) {
+    background: #fff !important;
+}
+.redemption tbody td{
+    line-height: 1.65rem;
+	font-size: 1em;
+    line-height: 2.8rem;
+}
+.card-label {
+       border-color: #89c4f4 transparent transparent #89c4f4;
+    /* border-color: rgba(255, 255, 255, 0) #89c4f4 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); */
+}
+.card-label {
+    position: absolute;
+    border-style: solid;
+    border-width: 20px;
+    float: left;
+    height: 0px;
+    border-top-left-radius: 5px;
+    width: 0px;
+    /* z-index: 10; */
+    /* transform: rotate(270deg); */
+    top: 0;
+    left: 0;
+}
+.label-text {
+    color: #fff;
+    position: relative;
+    right: 16px;
+    top: -17px;
+    font-size: 1.25rem;
+    /* transform: rotate(95deg); */
+}
+
+
+/*Susanta added for the checkout page */
+hr{
+	border-color: #aeaeae !important;
+}
+
+h1.checkoutheading,h1.checkoutheading::before, h1.checkoutheading::after
+{
+    content: none;
+    color: #7ac4df;
+    font: 300 3em Roboto;
+    font-size: 2.5em;
+    color: #59b5d7;
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: 10px;
+
+    background: none;
+
+}
+
+.signupfrm input[type="tel"] {
+    height: auto;
+    width: 75%;
+    display: inline;
+    background-color: #fff;
+    padding: 0 0 0 10px;
+    border: 0 solid #878787;
+    border-bottom-width: 1px;
+    min-height: 0;
+    box-shadow: none;
+}
+
+.p-id{
+/*	text-transform: uppercase !important;*/
+}
+.textcenter{
+	text-align: center;
+}
+
+.textright{
+    text-align: right;
+    font-family: "Roboto";
+    font-weight: 100;
+}
+
+#navmenubar{
+	display: none;
+}
+.toolbardialog{
+	top:75px;   /*important removed*/
+ }
+
+div.regular {
+    font-weight: normal;
+}
+
+.myaddr {
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.myaddrphone {
+    padding-top: 0.5rem;
+    border-top: 0.1rem solid #E4E4E4;
+    white-space: nowrap;
+}
+.singletruncate{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.uname.singletruncate{
+    width: 228px;
+}
+.umail .singletruncate{
+    width: 170px;
+}
+.umob .singletruncate{
+    width: 140px;
+}
+.myaddrphone label{
+     vertical-align: text-bottom;
+}
+
+.childfooter1 label, .childfooter2 label{
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.accountfrm {
+    margin-right: 20px;
+}
+
+.signupfrm input[type="number"] {
+    height: auto;
+    width: 80%;
+    display: inline;
+    background-color: #fff;
+    padding: 0 0 0 10px;
+    border: 0 solid #878787;
+    border-bottom-width: 1px;
+    min-height: 0;
+/*    box-shadow: -5px 4px 0px -4px #878787;*/  /*signup issue*/
+}
+
+img.delete.icon:hover{
+    content: url('../images/dustbin-icon-color.png')
+}
+
+img.edit.icon:hover{
+    content: url('../images/edit-icon-color.png');
+}
+
+.myaccount tbody tr td:nth-child(-n+2){
+    white-space: nowrap;
+}
+
+.contentwrapper {
+
+    max-width: 100em;
+    min-width: 64em;
+    padding-bottom: 6.2rem;
+}
+
+.securefooterwrapper{
+    padding-bottom: 5rem;
+/*    padding-top: 70px;    your cart summary page*/
+}
+
+.securelogin{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.securelogin #login{
+    background-position: -271px 5px;
+    width: 45px;
+}
+
+.securelogin span#loggedinuser::after{
+    content: none;
+}
+
+/*
+.securelogin #login:hover{
+    background-position: -271px -46px;
+}
+*/
+
+/*.content-messages{
+	padding-top: 92px;
+}*/
+
+/*Thanku heading*/
+.thankcontentwrapper h1.checkoutheading{
+	text-transform: none;
+}
+
+.inputdiv .ui-selectmenu-button, .inputdiv .ui-selectmenu-button:focus, .telinput.inputdiv .ui-selectmenu-button, .telinput.inputdiv .ui-selectmenu-button:focus{
+    background-image: none;
+    border-left: none;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #cccccc;
+    box-shadow: none;
+    height: 20px;
+    box-shadow: none;
+    background-color: #fff;
+    width: 23% !important; /*Effecting Delivery Address Sender Detail*/
+    border-radius: 0;
+    outline: none;
+    font-size: 15.4px;
+}
+
+.inputdiv .ui-selectmenu-button .ui-icon-triangle-1-s, .telinput.inputdiv .ui-selectmenu-button .ui-icon-triangle-1-s{
+    display: none;
+}
+
+.inputdiv .ui-selectmenu-button .ui-selectmenu-text, .telinput.inputdiv .ui-selectmenu-button .ui-selectmenu-text{
+    padding: 0;
+}
+
+#countryCode-menu{
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: -75px;
+    margin-top: -97px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+	height: 75px;
+}
+.reminderprofiletable{
+    min-width:310px;
+}
+.respprofiletable .myaccount {
+    width: 27%;
+}
+.accountbody{
+    min-width:980px;
+}
+.accountbody .respprofiletable{
+    width: 280px;
+}
+.accountbody .accountheight .myprofile{
+    min-width: 300px;
+}
+.checkmark_stem {
+   position: relative;
+    width: 2px;
+    height: 15px;
+    background-color: #fff;
+    left: -3px;
+    top: -17px;
+    transform: rotate(45deg);
+}
+.checkmark_kick {
+    position: relative;
+    width: 7px;
+    height: 2px;
+    background-color: #fff;
+    left: -13px;
+    top: -24px;
+    transform: rotate(50deg);
+}
+/*@kp*/
+h1.checkoutheading,h1.checkoutheading::before, h1.checkoutheading::after{
+    content: none;
+    color: #7ac4df;
+    font: 300 3em Roboto;
+    font-size: 1.6em;   /*@kptest*/
+    color: #59b5d7;
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: 10px;
+    background: none;
+}
+select#editProfile_countryGeoId {
+    font-weight: 300;
+}
+.contentwrapper h4 {
+	font-size: 1.3rem;
+    font-weight: 400;
+    color: #222;
+}
+span.myaddrphone.umob, span.myaddrphone.umail{
+	font-weight: 400;
+	color: #525151;
+}
+.ng-pristine.ng-untouched.ng-valid.ng-valid-email.ng-valid-maxlength::placeholder {
+    font-weight: 400;
+    color: #888;
+}

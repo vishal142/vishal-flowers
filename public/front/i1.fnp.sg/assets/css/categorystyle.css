@@ -1,0 +1,445 @@
+.row {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.columns{
+  padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+.row:before, .row:after {
+	content: " ";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+.row.collapse>.column, .row.collapse>.columns {
+	padding-left: 0;
+	padding-right: 0;
+}
+.row.collapse .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.row .row {
+	margin: 0 -0.4em;
+	max-width: none;
+	width: auto;
+}
+.row .row:before, .row .row:after {
+	content: " ";
+	display: table;
+}
+.row .row:after {
+	clear: both;
+}
+.row .row.collapse {
+	margin: 0;
+	max-width: none;
+	width: auto;
+}
+.row .row.collapse:before, .row .row.collapse:after {
+	content: " ";
+	display: table;
+}
+.row .row.collapse:after {
+	clear: both;
+}
+.row.uncollapse>.column, .row.uncollapse>.columns, .row .row.uncollapse>.column,
+.row  .row.uncollapse>.columns {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+div.checkbox {
+  width: 30px !important;
+  border: none !important;
+  padding: 0 !important;
+  float: none !important;
+  height: 30px !important;
+  vertical-align: text-top !important
+}
+label {
+  font-size: inherit;
+  color: rgb(72, 72, 72);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 0;
+  vertical-align: 0;
+  line-height: 1.3;
+}
+.row::before, .row::after {
+    content: " ";
+    display: table
+}
+input[type="file"], select {
+  padding-right: 1.2rem;
+  margin: 0px;
+}
+aside{
+  display: block;
+}
+/*End of generic css*/
+.clearside{
+	clear: both;
+}
+.navigation div nav .navmenu1{
+	text-decoration: none;
+	color:#7ac4e1;
+}
+#myModal{
+	padding: 0 0;
+	max-width: 45.5rem;
+	border-radius: 0;
+  box-shadow: none;
+	border-top: none;
+	position: absolute;
+}
+.popupitems {
+	display: table;
+	width: 100%;
+	list-style: none;
+}
+.popupitems>li{
+	display: table-cell;
+	width: 20%;
+	text-align: center;
+	font-size: 0.8em;
+}
+#sort-button,#sort-button.ui-state-focus {
+	border-radius: 0;
+}
+.top-bar .checkboxwrapper {
+	white-space: nowrap;
+	padding: 0 10px;
+}
+#filterdropdownph.row, #topbarcontainer.row{
+	max-width: 100%;
+	padding:0 30px;
+}
+#topbarcontainer > div > nav > section > ul.right{
+	z-index: 990;
+}
+#topbarcontainer {
+    background: none;
+}
+#breadcrumbs>label{
+	color: #31afac;
+	font-weight: 100;
+}
+#sort {
+  z-index: 15000;
+}
+select{
+    background-color: #fff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #222;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    border: 1px solid #cccccc;
+    padding: 0 0 0 0.28rem;
+    font-size: inherit;
+    color: #222;
+    line-height: 1.5;
+    height: 34px;
+    width: auto;
+    max-width: 100%;
+    vertical-align: top;
+    border-radius: 0;
+}
+.top-bar {
+	background: inherit;
+}
+.top-bar-section .dropdown label {
+	color: #fff;
+	font-size: 1.02em !important;
+	font-weight: 300 !important;
+}
+.top-bar-section .dropdown label span {
+	color: #fff;
+	font-size: 1.02em !important;
+	font-weight: 300 !important;
+}
+.top-bar-section li:not  (.has-form ) a:not (.button ):hover {
+	background-color: #36c2cf;
+}
+.top-bar-section .has-dropdown>a:after {
+	border-color: rgba(255, 255, 255, 0) transparent transparent transparent;
+	background-position: -514px -55px;
+}
+#breadcrumbs a:hover {
+	color: #31afac;
+}
+#sort-button,#sort-button.ui-state-focus {
+	border-radius: 0;
+}
+
+.leftnav.ui-front .ui-state-focus {
+	border: 1px solid #fff;
+	background-color: #fff;
+}
+.leftnav.ui-front > #sort {
+	width: 180px;
+	height: 35px;
+}
+.leftnav.ui-front > select {
+	padding: 0 0 0 0.5rem !important;
+}
+.leftnav.ui-front > label {
+	margin-right: 5px !important;
+}
+.checkboxwrapper {
+	box-shadow: none;
+	left: -5px;
+	margin-bottom: 0;
+}
+.checkbox {
+	position: relative;
+	display: inline-block;
+}
+.checkbox {
+	width: 24px;
+	height: 24px;
+}
+.checkbox input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.box {
+	position: absolute;
+	left: 9px;
+	border: 0.1rem solid #000;
+	background-color: #fff;
+	right: 4px;
+	bottom: 4px;
+	left: 4px;
+}
+.filterOptionsSelection .box {
+	top: -6px;
+	right: 10px;
+	bottom: 20px;
+	left: 4px;
+}
+.checkbox input:checked ~ .check {
+	position: absolute;
+	-webkit-animation: chkZoomIn cubic-bezier(0, 0, 1, 1) 0.3s;
+	animation: chkZoomIn cubic-bezier(0, 0, 1, 1) 0.3s;
+	top: 0.1rem;
+	right: 3px;
+	bottom: 6px;
+	background-size: 20px 20px;
+	left: 8px;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%233999e3%22%20d%3D%22M13.686%203.746c-.396-.348-1.011-.323-1.373.056l-6.28%206.448-2.373-2.258c-.885-.849-2.26.467-1.374%201.315l3.072%202.925c.379.362%201.058.359%201.422-.021l6.965-7.151c.362-.379.336-.967-.059-1.314z%22%2F%3E%3C%2Fsvg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20px;
+}
+.checkbox input:checked ~ figcaption{
+	background:#000;
+}
+.autogrow, .autogrow:focus{
+	padding: 0 0 0px 5px;
+	font-family: "roboto slab";
+	font-weight: 100;
+	border: 0 solid #888787;
+	border-bottom-width: 1px;
+	box-shadow: none;
+	outline: none;
+	background-color: #fff;
+	resize: none;
+	overflow:hidden;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+.checkbox input:checked ~ .check {
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 2px;;
+}
+.filterOptionsSelection .checkbox input:checked ~ .check {
+	top: -6px;
+	right: 10px;
+	bottom: 20px;
+	left: 4px;
+}
+.touchtarget {
+	position: absolute !important;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0);
+}
+.filterOptionsSelection .touchtarget {
+	top: -8px;
+	right: 9px;
+	bottom: 18px;
+	left: 3px;
+}
+.touchtarget:hover{
+	border:1px solid #59b6d8;
+}
+.cat-up {
+	top: 0;
+	position: fixed;
+	left: 0;
+	transition: top ease-in-out 0.3s;
+	padding-top: 0 !important;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.cat-up .menu {
+	margin-top: 0 !important;
+}
+.cat-down {
+	top: 75px !important;
+	position: fixed;
+	left: 0 !important;
+}
+.top-bar-section .dropdown label span.WebRupee  span {
+	margin-right: 5px !important;
+}
+div.scroll-pane-topmenu > ul:hover{
+  overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+div.scroll-pane>ul, div.scroll-pane-topmenu>ul,.tncTopContent, nav#hamburgermenu .scroll-pane-menu, .categorydescription, nav#hamburgermenu>ul{
+	overflow-y: hidden;
+	overflow-x:hidden;
+}
+div.scroll-pane-topmenu>ul:hover,
+div.scroll-pane>ul:hover,
+nav#hamburgermenu>ul:hover,
+nav#hamburgermenu .scroll-pane-menu:hover,
+.categorydescription:hover{
+	overflow-y: auto;
+	overflow-x:hidden;
+}
+div.scroll-pane-topmenu>ul::-webkit-scrollbar,
+div.scroll-pane>ul::-webkit-scrollbar,
+nav#hamburgermenu>ul::-webkit-scrollbar,
+nav#hamburgermenu .scroll-pane-menu::-webkit-scrollbar,
+.categorydescription::-webkit-scrollbar,.tncTopContent::-webkit-scrollbar {
+	width: 0.5em;
+}
+div.scroll-pane-topmenu>ul::-webkit-scrollbar-thumb,
+div.scroll-pane>ul::-webkit-scrollbar-thumb,
+div.scroll-pane-hmbrg::-webkit-scrollbar-thumb,
+nav#hamburgermenu>ul::-webkit-scrollbar-thumb,
+nav#hamburgermenu .scroll-pane-menu::-webkit-scrollbar-thumb,
+.categorydescription::-webkit-scrollbar-thumb,.tncTopContent::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+	background-color:#cdd4d4;
+}
+div.scroll-pane-topmenu>ul::-webkit-scrollbar-thumb:HOVER,
+div.scroll-pane>ul::-webkit-scrollbar-thumb:HOVER,
+div.scroll-pane-hmbrg::-webkit-scrollbar-thumb:HOVER,
+nav#hamburgermenu>ul::-webkit-scrollbar-thumb:HOVER,
+nav#hamburgermenu .scroll-pane-menu::-webkit-scrollbar-thumb:HOVER,
+.categorydescription::-webkit-scrollbar-thumb:HOVER,.tncTopContent::-webkit-scrollbar-thumb{
+	-webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+	background-color:#cdd4d4;
+}
+div.scroll-pane-topmenu>ul::-webkit-scrollbar-track,
+div.scroll-pane>ul::-webkit-scrollbar-track,
+div.scroll-pane-hmbrg::-webkit-scrollbar-track,
+nav#hamburgermenu>ul::-webkit-scrollbar-track,
+nav#hamburgermenu .scroll-pane-menu::-webkit-scrollbar-track,
+.categorydescription::-webkit-scrollbar-track,.tncTopContent::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	background-color:#fafafa;
+}
+div.scroll-pane>ul,div.scroll-pane-hmbrg,.tncTopContent{
+	width: 100%;
+	height: 100%;
+}
+div.scroll-pane ul li, #tabs div.scroll-pane ul li{
+	max-width: 100%;   /*@$hakeel Removed Important Coz it was overriding Timeslot*/
+}
+.hideheader{
+	top: -170px;
+	overflow: hidden;
+}
+.stickbelowheader{
+    top: 167px;
+ }
+.productfetchingloader{
+    text-align: center;
+}
+.productfetchingloader img{
+width:auto !important;
+}
+
+#topbarcontainer .top-bar-section, #topbarcontainer .top-bar {
+	display: block;
+}
+.leftnav>label{
+	display: inline-block;
+}
+/*custom category heading css*/
+#categorybanner > h1.custom-category-heading {
+	color: #222;
+    font-family: 'Roboto',sans-serif;
+    font-size: 3.6vw;
+    /* font-weight: lighter; */
+    letter-spacing: 0.15px;
+    right: 11px;
+    top: 13%;
+    width: 50%;
+    position: unset;
+}
+#categorybanner > .occasion-categorydescription {
+	position: unset !important;
+    color: #222 !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    height: inherit !important;
+}
+ul.custom-category-ul .h-price span.oldprice {
+	margin-right : 5px;
+}
+#loginmodalform .inputdiv .ui-selectmenu-button{    
+    height: 20px;
+}
+.top-bar-section .right.custom-price-filter-badge ul li input:checked ~ label .webprice{
+	color: #fff;
+}
+.filterOptionsSelection .webprice, .custom-price-filter-badge .webprice , .selptocr .webprice{
+	display: inline-block;
+	font-weight: normal;
+}
+.price-selptocr .webprice{
+	color: inherit;
+}
+.has-dropdown .price-selptocr.active {
+    margin-left: 2px;
+    text-align: unset !important;
+}
+.has-dropdown .price-selptocr.active:AFTER {
+	right: -7px !important;
+}
+.filterOptionsSelection {
+	top: 10px;
+}
+.filterOptionsSelection .checklabel {
+	vertical-align: super;
+}
+#categorybanner img {
+    min-height: auto;
+    max-width: 100%;
+}
+[class*="block-grid-"]>li {
+    padding-top: 20px;
+    padding-right: 30px;
+}
+.categorydescription.scroll-pane{
+	height: auto;
+}
