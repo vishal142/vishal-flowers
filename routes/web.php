@@ -93,3 +93,12 @@ Route::post('admin/slider/add-slider-data','SliderController@add_slider_data');
 
 Route::post('admin/slider/change-status','SliderController@change_status');
 Route::post('admin/slider/delete-slider','SliderController@delete_slider');
+############## front #############
+Route::get('flowers','FrontController@flowers');
+Route::get('flower-type','FrontController@flower_type');
+Route::get('flower-combos','FrontController@flower_combos');
+Route::get('plants','FrontController@plants');
+Route::get('occasion','FrontController@occasion');
+Route::get('gift','FrontController@gift');
+Route::get('category','FrontController@category');
+Route::get('item-detail','FrontController@item_detail');

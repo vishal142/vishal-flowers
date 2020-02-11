@@ -24,6 +24,11 @@ class Helper
     	return DB::table($table)->select($fliedName)->where($where)->get();
 	}
 
+    static function hike_price_chk(){
+        $res = DB::table('tbl_hike_price')->select('hike_value')->where('start_date',date('Y-m-d'))->where('status','Active')->get();
+        return $res[0]['hike_value'];
+    }
+
 
 	
 }

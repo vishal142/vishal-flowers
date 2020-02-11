@@ -69,7 +69,7 @@
 		  <div class="header-wrapper">
 			<div id="fnplogo" class="left-side" > 
 				<a href="/" target="_self" data-ga-title="Logo"> 
-					<img src="{{asset('webadmin/front/assets/images/logo.png')}}" alt="Online Flower Delivery - Saesha Flowers"> 
+					<img src="{{asset('front/assets/images/logo.png')}}" alt="Online Flower Delivery - Saesha Flowers"> 
 				</a> 
 			</div>
 			<form class="searchfrm left-side" action="" id="searchform">
@@ -167,7 +167,7 @@
 					 
 					
 					foreach($data_cat as $cat):?>
-						<li><a id="#tabs-1<?php echo $cat->id;?>" href="category?sl='.$cat->category_slug"><?php echo $cat->category_name;?></a></li>
+						<li><a id="#tabs-1<?php echo $cat->id;?>" href="category?sl=<?php echo $cat->category_slug;?>"><?php echo $cat->category_name;?></a></li>
 
 					<?php endforeach;?>
 
@@ -182,7 +182,7 @@
 						<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'1','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="'flowers?sl='.$sub_rose->slug'"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="flowers?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 					  </ul>
@@ -197,7 +197,7 @@
 					  	<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'2','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="'flowers-type?sl='.$sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="flower-type?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 						
@@ -210,11 +210,11 @@
 				  <div class="sub-navmenubar">
 					<section>
 					  <ul>
-					  	<li class="ui-corner-left"><a href="'category?sl=flower-combos-indonesia">Flower Combos</a>
+					  	<li class="ui-corner-left">
 						<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'3','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="flower-combos?sl='.$sub_rose->slug;"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="flower-combos?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 					  </ul>
@@ -225,11 +225,11 @@
 				  <div class="sub-navmenubar">
 					<section>
 					  <ul>
-						<li class="ui-corner-left"><a href="#">Plants</a></li>
+						<li class="ui-corner-left"></li>
 						<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'4','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="plants?sl='.$sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="plants?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 
@@ -246,7 +246,7 @@
 					  	<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'5','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="occasion?sl='.$sub_rose->slug"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="occasion?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 
@@ -263,7 +263,7 @@
 					  	<?php $data_sub_cat_rose = (new \App\Library\helper)->perticularFlied('tbl_sub_categoery','*',array('cat_id'=>'6','status'=>'active','is_delete'=>'1'));
 					
 							foreach($data_sub_cat_rose as $sub_rose){?>
-								 <li class="ui-corner-left"><a href="gift?sl='.$sub_rose->slug);?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
+								 <li class="ui-corner-left"><a href="gift?sl=<?php echo $sub_rose->slug;?>"><?php echo $sub_rose->sub_cat_name;?></a></li>
 
 							<?php } ?>
 

@@ -26,13 +26,13 @@
 				</a></li>
 			  <li><a href="{{asset('category?sl=cakes-indonesia')}};?>">
 				<figure>
-					<img src="asset('front/assets/images/top-icon2.png')}}" alt="Icon" />
+					<img src="{{asset('front/assets/images/top-icon2.png')}}" alt="Icon" />
 				  <figcaption>Cakes</figcaption>
 				</figure>
 				</a></li>
 			  <li><a href="{{asset('occasion?sl=birthday-indonesia')}};?>">
 				<figure>
-					<img src="{{asset('webadmin/front/assets/images/top-icon3.png')}}" alt="Icon" />
+					<img src="{{asset('front/assets/images/top-icon3.png')}}" alt="Icon" />
 				  <figcaption>Birthday</figcaption>
 				</figure>
 				</a></li>
@@ -82,11 +82,11 @@
 			  
 			  <div class="rslides_container">
 				  <ul class="rslides" id="slider1">
-				  	<?php foreach($slider_data as $slider):?>
-					<li><img src="img.php?img=gallery/'.$slider->image;&amp;mode=cm&amp;w=1279&amp;h=224" alt="<?php echo $slider->name;?>"></li>
-				<?php endforeach; ?>
-					<!-- <li><img src="<?php //echo base_url();?>webadmin/front/assets/images/custom/new-home-page/top-banners/sg-desk-29-oct-2019-2.jpg" alt="dd"></li>
-					<li><img src="<?php //echo base_url();?>webadmin/front/assets/images/custom/new-home-page/top-banners/sg-desk-29-oct-2019-3.jpg" alt="dd"></li> -->
+				  	<?php //foreach($slider_data as $slider):?>
+					<!-- <li><img src="img.php?img=gallery/'.$slider->image;&amp;mode=cm&amp;w=1279&amp;h=224" alt="<?php //echo $slider->name;?>"></li> -->
+				<?php //endforeach; ?>
+					<li><img src="{{asset('front/assets/images/custom/new-home-page/top-banners/sg-desk-29-oct-2019-2.jpg')}}" alt="dd"></li>
+					<li><img src="{{asset('front/assets/images/custom/new-home-page/top-banners/sg-desk-29-oct-2019-3.jpg')}}" alt="dd"></li>
 				  </ul>
 				</div>
 		  </aside>
@@ -160,7 +160,7 @@
 			</figure>
 			</a> </div>
 		  <div class="category"> <a href="flowers?sl=lilies-indonesia">
-			<figure> <img src="{{asset('flowers?sl=lilies-indonesia')}}" data-src="{{asset('flowers?sl=lilies-indonesia')}}" alt="Online Lilies"/>
+			<figure> <img src="{{asset('front/assets/images/custom/new-home-page/flowers/lilies.jpg')}}" data-src="{{asset('front/assets/images/custom/new-home-page/flowers/lilies.jpg')}}" alt="Online Lilies"/>
 			  <figcaption>Lilies</figcaption>
 			</figure>
 			</a> </div>
