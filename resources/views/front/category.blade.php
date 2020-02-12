@@ -130,7 +130,7 @@
 						<div class="breadcrumb-wrapper">
 							<a itemprop="item name" class="navmenu" href="/">Home<meta itemprop="position" content="1"></a> &nbsp;
 							<i class="material-icons breadcrumb-icons">keyboard_arrow_right</i>
-							<span>{{$sub_categoery_name}}</span>
+							<span>{{$category_name}}</span>
 							<meta itemprop="position" content="2">
 						</div>
 					</nav>
@@ -186,7 +186,10 @@
 					</li>
 				 <?php endforeach;
 				}else{?>
-					<h5>No record found in {{$sub_categoery_name}}</h5>
+					<h5>No record found in {{$category_name}}</h5>
+
+					
+
 				<?php }?>
 
 				</ul>

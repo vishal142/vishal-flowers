@@ -29,6 +29,10 @@ class Helper
         return $res[0]['hike_value'];
     }
 
+    static function OccasionTypeResult($id){
+        return DB::table('tbl_item')->select('*')->where('occasion_type','LIKE',"%$id%")->get();
+    }
+
 
 	
 }

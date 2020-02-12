@@ -186,6 +186,7 @@
 					</li>
 				 <?php endforeach;
 				}else{?>
+
 					<h5>No record found in {{$sub_categoery_name}}</h5>
 				<?php }?>
 

@@ -5,7 +5,7 @@
 		  <div class="header-wrapper">
 			<ul>
 			  <li class="info-item">
-				  <a id="call-info" href="https://wa.me/6281574474913"><img src="{{asset('front/assets/images/whatsapp.png')}}" alt="Whatsapp" /> +6281574474913 </a>
+				  <a id="call-info" href="https://wa.me/917501553047"><img src="{{asset('front/assets/images/whatsapp.png')}}" alt="Whatsapp" />7501553047</a>
 			  </li>
 			  <li class="info-item"> 
 				  <a id="email-info" href="mailto:info@saeshaflowers.com"><img src="{{asset('front/assets/images/envelope.png')}}" alt="Email" />  info@saeshaflowers.com</a>
